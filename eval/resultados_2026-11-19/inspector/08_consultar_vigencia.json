@@ -1,0 +1,28 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"codigo\": \"RES-CREG-0112-2021\",\n  \"version\": \"—\",\n  \"estado\": \"derogado\",\n  \"vigente_desde\": \"2021-04-28\",\n  \"vigente_hasta\": \"2024-07-19\",\n  \"regla\": \"R3\",\n  \"evidencia\": [\n    \"RES-CREG-0043-2024 Art. 6: deroga en su integridad la Resolución 0112 de 2021. El metadato «Reemplaza a» de la 0043 dice «—»: la derogatoria solo consta en el articulado.\"\n  ],\n  \"certificado_por\": \"Gerencia de Cumplimiento\",\n  \"fecha_certificacion\": \"2026-11-17\",\n  \"reemplazado_por\": \"RES-CREG-0043-2024\",\n  \"modo_certificacion\": \"simulada-prototipo\"\n}"
+    }
+  ],
+  "structuredContent": {
+    "result": [
+      {
+        "codigo": "RES-CREG-0112-2021",
+        "version": "—",
+        "estado": "derogado",
+        "vigente_desde": "2021-04-28",
+        "vigente_hasta": "2024-07-19",
+        "regla": "R3",
+        "evidencia": [
+          "RES-CREG-0043-2024 Art. 6: deroga en su integridad la Resolución 0112 de 2021. El metadato «Reemplaza a» de la 0043 dice «—»: la derogatoria solo consta en el articulado."
+        ],
+        "certificado_por": "Gerencia de Cumplimiento",
+        "fecha_certificacion": "2026-11-17",
+        "reemplazado_por": "RES-CREG-0043-2024",
+        "modo_certificacion": "simulada-prototipo"
+      }
+    ]
+  },
+  "isError": false
+}

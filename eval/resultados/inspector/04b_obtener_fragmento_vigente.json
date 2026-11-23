@@ -1,0 +1,25 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"cita\": \"PRO-OPE-012 v3 §3\",\n  \"codigo\": \"PRO-OPE-012\",\n  \"version\": \"3\",\n  \"seccion\": \"3\",\n  \"titulo_seccion\": \"3. Criterios de detección\",\n  \"titulo_documento\": \"Atención de anomalías de presión en tramos de oleoducto\",\n  \"clase\": \"procedimiento\",\n  \"naturaleza\": \"normativo\",\n  \"estado_vigencia\": \"vigente\",\n  \"advertencia_vigencia\": null,\n  \"cuarentena\": false,\n  \"texto\": \"3.1 Se considera anomalía de presión toda caída sostenida por debajo del umbral definido para el tramo, observada durante la ventana de evaluación establecida. Los umbrales y las ventanas de esta versión reemplazan íntegramente los de la versión anterior.\\nTramo: Ayacucho – Coveñas; Umbral de alarma (psi): 1.100; Ventana de evaluación: 15 minutos; Nivel de alarma: Alta.\\nTramo: Barrancabermeja – Ayacucho; Umbral de alarma (psi): 1.020; Ventana de evaluación: 15 minutos; Nivel de alarma: Alta.\\nTramo: Caucasia – Coveñas; Umbral de alarma (psi): 920; Ventana de evaluación: 15 minutos; Nivel de alarma: Media.\\nTramo: Cusiana – Porvenir; Umbral de alarma (psi): 1.050; Ventana de evaluación: 15 minutos; Nivel de alarma: Alta.\\n3.2 Se considera sospecha de sustracción la concurrencia, dentro de la misma ventana horaria, de una anomalía de presión y de una diferencia de balance del tramo superior a la tolerancia establecida en el procedimiento de conciliación volumétrica vigente.\",\n  \"puntaje\": null,\n  \"rango\": null\n}"
+    }
+  ],
+  "structuredContent": {
+    "cita": "PRO-OPE-012 v3 §3",
+    "codigo": "PRO-OPE-012",
+    "version": "3",
+    "seccion": "3",
+    "titulo_seccion": "3. Criterios de detección",
+    "titulo_documento": "Atención de anomalías de presión en tramos de oleoducto",
+    "clase": "procedimiento",
+    "naturaleza": "normativo",
+    "estado_vigencia": "vigente",
+    "advertencia_vigencia": null,
+    "cuarentena": false,
+    "texto": "3.1 Se considera anomalía de presión toda caída sostenida por debajo del umbral definido para el tramo, observada durante la ventana de evaluación establecida. Los umbrales y las ventanas de esta versión reemplazan íntegramente los de la versión anterior.\nTramo: Ayacucho – Coveñas; Umbral de alarma (psi): 1.100; Ventana de evaluación: 15 minutos; Nivel de alarma: Alta.\nTramo: Barrancabermeja – Ayacucho; Umbral de alarma (psi): 1.020; Ventana de evaluación: 15 minutos; Nivel de alarma: Alta.\nTramo: Caucasia – Coveñas; Umbral de alarma (psi): 920; Ventana de evaluación: 15 minutos; Nivel de alarma: Media.\nTramo: Cusiana – Porvenir; Umbral de alarma (psi): 1.050; Ventana de evaluación: 15 minutos; Nivel de alarma: Alta.\n3.2 Se considera sospecha de sustracción la concurrencia, dentro de la misma ventana horaria, de una anomalía de presión y de una diferencia de balance del tramo superior a la tolerancia establecida en el procedimiento de conciliación volumétrica vigente.",
+    "puntaje": null,
+    "rango": null
+  },
+  "isError": false
+}

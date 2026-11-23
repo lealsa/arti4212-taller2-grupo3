@@ -1,0 +1,2150 @@
+{
+ "fecha": "2026-11-19T07:07:40+00:00",
+ "juez": "laya:ml",
+ "huella_modelo": "st:intfloat/multilingual-e5-small@main:384",
+ "estrategia": "A2",
+ "decisor": "crossencoder:BAAI/bge-reranker-v2-m3",
+ "umbral_cobertura": 0.5,
+ "conjunto": "1.0.0",
+ "slo": {
+  "acierto@5_hibrido": 0.9,
+  "desviacion_max": 0.1,
+  "anclaje_min": 0.95,
+  "violaciones_vigencia": 0,
+  "rechazo_correcto_min": 0.75
+ },
+ "metricas": {
+  "casos": 30,
+  "correctos": 30,
+  "tasa_desviacion": 0.0,
+  "desviacion_respondibles": 0.0,
+  "rechazo_correcto": 1.0,
+  "anclaje": 0.9615384615384616,
+  "anclaje_promedio": 0.9216153846153846,
+  "pertinencia@5": {
+   "pertinente": 0.12307692307692308,
+   "parcial": 0.2692307692307692,
+   "no_pertinente": 0.6076923076923076
+  },
+  "recuperacion": {
+   "hibrido": {
+    "acierto@1": 0.7692307692307693,
+    "acierto@5": 1.0,
+    "mrr@5": 0.8717948717948718
+   },
+   "semantico": {
+    "acierto@1": 0.7307692307692307,
+    "acierto@5": 1.0,
+    "mrr@5": 0.8358974358974359
+   },
+   "lexico": {
+    "acierto@1": 0.8076923076923077,
+    "acierto@5": 1.0,
+    "mrr@5": 0.9038461538461539
+   }
+  },
+  "violaciones_vigencia": 0,
+  "ablacion_derogados_sin_filtro": 31,
+  "ablacion_casos_con_derogado_sin_filtro": 19,
+  "ablacion_filtro_posterior_resultados_perdidos": 31,
+  "latencia_ms_p50": 1566.1,
+  "latencia_ms_p95": 3174.6
+ },
+ "barrido_umbral": [
+  {
+   "umbral": 0.1,
+   "respondibles_correctos": 1.0,
+   "rechazo_correcto": 0.75,
+   "desviacion": 0.033333333333333326
+  },
+  {
+   "umbral": 0.3,
+   "respondibles_correctos": 1.0,
+   "rechazo_correcto": 0.75,
+   "desviacion": 0.033333333333333326
+  },
+  {
+   "umbral": 0.5,
+   "respondibles_correctos": 1.0,
+   "rechazo_correcto": 1.0,
+   "desviacion": 0.0
+  },
+  {
+   "umbral": 0.7,
+   "respondibles_correctos": 1.0,
+   "rechazo_correcto": 1.0,
+   "desviacion": 0.0
+  },
+  {
+   "umbral": 0.9,
+   "respondibles_correctos": 0.7692307692307693,
+   "rechazo_correcto": 1.0,
+   "desviacion": 0.19999999999999996
+  }
+ ],
+ "casos": [
+  {
+   "id": "C01",
+   "tipo": "trampa_valor",
+   "pregunta": "¿Cuál es el umbral de alarma de presión en el tramo Ayacucho – Coveñas?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "Tramo: Ayacucho – Coveñas; Umbral de alarma (psi): 1.100; Ventana de evaluación: 15 minutos; Nivel de alarma: Alta.",
+     "cita": "PRO-OPE-012 v3 §3",
+     "cobertura": 1.0
+    }
+   ],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.543
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "ACTA-CTO-2025-07@v—#3",
+      "PRO-OPE-012@v3#3",
+      "MAN-OPE-001@v3#3",
+      "MAN-MTO-002@v1#2",
+      "FIC-ACT-P101@v2#2"
+     ],
+     "rango_esperado": 2,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "ACTA-CTO-2025-07@v—#3",
+      "PRO-OPE-012@v3#3",
+      "MAN-OPE-001@v3#3",
+      "MAN-MTO-002@v1#2",
+      "FIC-ACT-P101@v2#2"
+     ],
+     "rango_esperado": 2,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "PRO-OPE-012@v3#3",
+      "ACTA-CTO-2025-07@v—#3",
+      "MAN-MTO-002@v1#2",
+      "MAN-OPE-001@v3#3",
+      "ACTA-CTO-2025-07@v—#2"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "parcial",
+    "pertinente",
+    "parcial",
+    "pertinente",
+    "parcial"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 1,
+    "resultados_filtro_posterior": 4
+   },
+   "latencia_ms": 787.2,
+   "esperados": [
+    "PRO-OPE-012@v3#3"
+   ]
+  },
+  {
+   "id": "C02",
+   "tipo": "trampa_valor",
+   "pregunta": "¿Cuánto dura la ventana de evaluación de una anomalía de presión?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "Tramo: Cusiana – Porvenir; Umbral de alarma (psi): 1.050; Ventana de evaluación: 15 minutos; Nivel de alarma: Alta.",
+     "cita": "PRO-OPE-012 v3 §3",
+     "cobertura": 0.954
+    }
+   ],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.414
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "PRO-OPE-012@v3#3",
+      "ACTA-CTO-2025-07@v—#3",
+      "ACTA-CTO-2025-11@v—#3",
+      "PRO-OPE-012@v3#1",
+      "PRO-OPE-012@v3#4"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "PRO-OPE-012@v3#3",
+      "ACTA-CTO-2025-11@v—#3",
+      "PRO-OPE-012@v3#4",
+      "ACTA-CTO-2025-07@v—#3",
+      "PRO-OPE-012@v3#1"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "PRO-OPE-012@v3#3",
+      "ACTA-CTO-2025-07@v—#3",
+      "PRO-OPE-012@v3#1",
+      "PRO-OPE-012@v3#2",
+      "PRO-OPE-012@v3#5"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "pertinente",
+    "parcial",
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 2,
+    "resultados_filtro_posterior": 3
+   },
+   "latencia_ms": 2709.1,
+   "esperados": [
+    "PRO-OPE-012@v3#3"
+   ]
+  },
+  {
+   "id": "C03",
+   "tipo": "directo",
+   "pregunta": "¿Cuál es la MAOP del tramo Ayacucho – Coveñas?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "Tramo: Ayacucho – Coveñas; Longitud (km): 482; Diámetro (pulg.): 24; MAOP (psi): 1.250; Caudal nominal (bpd): 180.000.",
+     "cita": "MAN-OPE-001 v3 §3",
+     "cobertura": 0.999
+    }
+   ],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.697
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "MAN-OPE-001@v3#3",
+      "MAN-MTO-002@v1#2",
+      "ACTA-CTO-2025-07@v—#3",
+      "PRO-OPE-012@v3#3",
+      "MAN-OPE-001@v3#1"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "MAN-OPE-001@v3#3",
+      "ACTA-CTO-2025-07@v—#3",
+      "MAN-MTO-002@v1#2",
+      "MAN-OPE-001@v3#1",
+      "PRO-OPE-012@v3#3"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "MAN-OPE-001@v3#3",
+      "MAN-MTO-002@v1#2",
+      "PRO-OPE-012@v3#3",
+      "ACTA-CTO-2025-07@v—#3",
+      "MAN-OPE-001@v3#1"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "parcial",
+    "parcial",
+    "parcial",
+    "pertinente",
+    "parcial"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 1,
+    "resultados_filtro_posterior": 4
+   },
+   "latencia_ms": 749.7,
+   "esperados": [
+    "MAN-OPE-001@v3#3"
+   ]
+  },
+  {
+   "id": "C04",
+   "tipo": "trampa_valor",
+   "pregunta": "¿Cuál es la tolerancia de conciliación volumétrica de un tramo?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "Concepto: Tolerancia de conciliación; Valor: 0,5 % del volumen recibido.",
+     "cita": "PRO-MED-007 v2 §3",
+     "cobertura": 0.992
+    }
+   ],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.966
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "PRO-MED-007@v2#3",
+      "PRO-MED-007@v2#1",
+      "PRO-MED-007@v2#4",
+      "PRO-MED-007@v2#2",
+      "PRO-OPE-012@v3#3"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "PRO-MED-007@v2#3",
+      "PRO-MED-007@v2#1",
+      "PRO-MED-007@v2#2",
+      "PRO-MED-007@v2#4",
+      "PRO-OPE-012@v3#3"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "PRO-MED-007@v2#3",
+      "PRO-MED-007@v2#4",
+      "PRO-MED-007@v2#1",
+      "PRO-OPE-012@v3#3",
+      "MAN-OPE-004@v2#5"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "pertinente",
+    "parcial",
+    "no_pertinente",
+    "no_pertinente",
+    "parcial"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 3,
+    "resultados_filtro_posterior": 2
+   },
+   "latencia_ms": 2810.8,
+   "esperados": [
+    "PRO-MED-007@v2#3"
+   ]
+  },
+  {
+   "id": "C05",
+   "tipo": "trampa_valor",
+   "pregunta": "¿Cuál es el plazo para cerrar la conciliación mensual?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "Concepto: Plazo de cierre; Valor: Quinto día hábil del mes siguiente.",
+     "cita": "PRO-MED-007 v2 §3",
+     "cobertura": 0.722
+    }
+   ],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.941
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "PRO-MED-007@v2#3",
+      "PRO-MED-007@v2#4",
+      "RES-ANH-0471-2023@v—#Art. 2",
+      "MAN-OPE-004@v2#5",
+      "PRO-SEG-015@v1#3"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "PRO-MED-007@v2#3",
+      "RES-ANH-0471-2023@v—#Art. 2",
+      "PRO-MED-007@v2#4",
+      "MAN-OPE-004@v2#5",
+      "RES-ANH-0471-2023@v—#Art. 4"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "PRO-MED-007@v2#3",
+      "PRO-MED-007@v2#4",
+      "PRO-SEG-015@v1#3",
+      "MAN-OPE-004@v2#5",
+      "MAN-OPE-004@v2#3"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "parcial",
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente",
+    "pertinente"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 2,
+    "resultados_filtro_posterior": 3
+   },
+   "latencia_ms": 1819.7,
+   "esperados": [
+    "PRO-MED-007@v2#3"
+   ]
+  },
+  {
+   "id": "C06",
+   "tipo": "directo",
+   "pregunta": "¿A quién se escalan las diferencias de balance superiores al uno por ciento y cuándo?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "3.3 Las diferencias superiores al uno por ciento del volumen recibido se escalan a la Gerencia de Seguridad Física el mismo día del corte.",
+     "cita": "PRO-MED-007 v2 §3",
+     "cobertura": 0.869
+    }
+   ],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.994
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "PRO-MED-007@v2#3",
+      "PRO-MED-007@v2#2",
+      "ACTA-CTO-2025-11@v—#3",
+      "PRO-MED-007@v2#1",
+      "PRO-SEG-015@v1#4"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "ACTA-CTO-2025-11@v—#3",
+      "PRO-MED-007@v2#2",
+      "PRO-MED-007@v2#3",
+      "RES-ANH-0471-2023@v—#Art. 2",
+      "RES-ANH-0471-2023@v—#Art. 4"
+     ],
+     "rango_esperado": 3,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "PRO-MED-007@v2#3",
+      "PRO-MED-007@v2#1",
+      "PRO-SEG-015@v1#4",
+      "PRO-MED-007@v2#2",
+      "PRO-OPE-012@v3#3"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "pertinente",
+    "no_pertinente",
+    "parcial",
+    "no_pertinente",
+    "no_pertinente"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 0,
+    "resultados_filtro_posterior": 5
+   },
+   "latencia_ms": 3376.1,
+   "esperados": [
+    "PRO-MED-007@v2#3"
+   ]
+  },
+  {
+   "id": "C07",
+   "tipo": "trampa_valor",
+   "pregunta": "¿En qué plazo se reporta un evento de hurto de hidrocarburos a la autoridad competente?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "Destinatario: Autoridad competente; Plazo: 24 horas desde la detección; Responsable: Gerencia de Seguridad Física.",
+     "cita": "PRO-SEG-015 v1 §3",
+     "cobertura": 0.999
+    }
+   ],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.994
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "PRO-SEG-015@v1#3",
+      "PRO-SEG-015@v1#6",
+      "PRO-SEG-015@v1#1",
+      "RES-ANH-0471-2023@v—#Art. 3",
+      "PRO-SEG-015@v1#4"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "PRO-SEG-015@v1#3",
+      "PRO-SEG-015@v1#6",
+      "PRO-SEG-015@v1#1",
+      "PRO-SEG-015@v1#4",
+      "PRO-SEG-015@v1#5"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "PRO-SEG-015@v1#3",
+      "RES-ANH-0471-2023@v—#Art. 3",
+      "PRO-SEG-015@v1#1",
+      "PRO-SEG-015@v1#6",
+      "PRO-SEG-015@v1#5"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "parcial",
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 1,
+    "resultados_filtro_posterior": 4
+   },
+   "latencia_ms": 2178.8,
+   "esperados": [
+    "PRO-SEG-015@v1#3"
+   ]
+  },
+  {
+   "id": "C08",
+   "tipo": "trampa_valor",
+   "pregunta": "¿Cuál es la incertidumbre máxima admisible en los puntos de transferencia de custodia?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "La incertidumbre combinada del sistema de medición en los puntos de transferencia de custodia no excederá del cero coma tres por ciento (0,3 %).",
+     "cita": "RES-CREG-0043-2024 §Art. 2",
+     "cobertura": 0.999
+    }
+   ],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.986
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "RES-CREG-0043-2024@v—#Art. 2",
+      "RES-CREG-0043-2024@v—#Art. 1",
+      "MAN-OPE-004@v2#3",
+      "MAN-OPE-004@v2#1",
+      "RES-CREG-0043-2024@v—#Art. 4"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "RES-CREG-0043-2024@v—#Art. 2",
+      "RES-CREG-0043-2024@v—#Art. 1",
+      "RES-CREG-0043-2024@v—#Art. 4",
+      "RES-CREG-0043-2024@v—#Art. 6",
+      "RES-CREG-0043-2024@v—#Art. 3"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "RES-CREG-0043-2024@v—#Art. 2",
+      "MAN-OPE-004@v2#3",
+      "MAN-OPE-004@v2#1",
+      "MAN-OPE-001@v3#2",
+      "RES-CREG-0043-2024@v—#Art. 1"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "no_pertinente",
+    "no_pertinente",
+    "parcial",
+    "no_pertinente",
+    "no_pertinente"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 2,
+    "resultados_filtro_posterior": 3
+   },
+   "latencia_ms": 1461.4,
+   "esperados": [
+    "RES-CREG-0043-2024@v—#Art. 2"
+   ]
+  },
+  {
+   "id": "C09",
+   "tipo": "trampa_valor",
+   "pregunta": "¿Cada cuánto debe verificarse el factor del medidor en los puntos de salida a buque según la regulación?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "Los operadores verificarán el factor de cada medidor con periodicidad no superior a treinta días calendario para los puntos de salida a buque, y de sesenta días calendario para los demás puntos.",
+     "cita": "RES-CREG-0043-2024 §Art. 3",
+     "cobertura": 0.996
+    }
+   ],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.993
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "RES-CREG-0043-2024@v—#Art. 3",
+      "MAN-OPE-004@v2#3",
+      "MAN-OPE-004@v2#2",
+      "COM-PRV-0134@v—#Condiciones de aplicación",
+      "RES-CREG-0043-2024@v—#Art. 1"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "RES-CREG-0043-2024@v—#Art. 3",
+      "MAN-OPE-004@v2#3",
+      "RES-CREG-0043-2024@v—#Art. 1",
+      "MAN-OPE-004@v2#2",
+      "RES-CREG-0043-2024@v—#Art. 4"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "RES-CREG-0043-2024@v—#Art. 3",
+      "MAN-OPE-004@v2#3",
+      "COM-PRV-0134@v—#Condiciones de aplicación",
+      "MAN-OPE-004@v2#2",
+      "COM-PRV-0134@v—#Notas de la versión"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "no_pertinente",
+    "parcial",
+    "parcial",
+    "no_pertinente",
+    "no_pertinente"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 2,
+    "resultados_filtro_posterior": 3
+   },
+   "latencia_ms": 1943.2,
+   "esperados": [
+    "RES-CREG-0043-2024@v—#Art. 3"
+   ]
+  },
+  {
+   "id": "C10",
+   "tipo": "directo",
+   "pregunta": "¿Dentro de qué plazo se remite el reporte mensual consolidado de pérdidas a la autoridad sectorial?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "Los operadores remitirán un reporte mensual consolidado dentro de los quince días calendario siguientes al cierre del mes reportado.",
+     "cita": "RES-ANH-0471-2023 §Art. 2",
+     "cobertura": 0.919
+    }
+   ],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.981
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "RES-ANH-0471-2023@v—#Art. 2",
+      "RES-ANH-0471-2023@v—#Considerando",
+      "PRO-SEG-015@v1#3",
+      "RES-ANH-0471-2023@v—#Art. 4",
+      "RES-ANH-0471-2023@v—#Art. 3"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "RES-ANH-0471-2023@v—#Art. 2",
+      "RES-ANH-0471-2023@v—#Considerando",
+      "RES-ANH-0471-2023@v—#Art. 4",
+      "PRO-SEG-015@v1#3",
+      "RES-ANH-0471-2023@v—#Art. 1"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "RES-ANH-0471-2023@v—#Art. 2",
+      "RES-ANH-0471-2023@v—#Considerando",
+      "PRO-SEG-015@v1#3",
+      "RES-ANH-0471-2023@v—#Art. 3",
+      "RES-ANH-0471-2023@v—#Art. 4"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "no_pertinente",
+    "no_pertinente",
+    "parcial",
+    "no_pertinente",
+    "no_pertinente"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 1,
+    "resultados_filtro_posterior": 4
+   },
+   "latencia_ms": 1852.1,
+   "esperados": [
+    "RES-ANH-0471-2023@v—#Art. 2"
+   ]
+  },
+  {
+   "id": "C11",
+   "tipo": "directo",
+   "pregunta": "¿Durante cuánto tiempo se conservan los soportes de medición y conciliación de los reportes de pérdidas?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "Los operadores conservarán por cinco años los soportes de medición y de conciliación que respaldan cada reporte, y los pondrán a disposición de la autoridad cuando les sean requeridos.",
+     "cita": "RES-ANH-0471-2023 §Art. 4",
+     "cobertura": 0.998
+    }
+   ],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.98
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "RES-ANH-0471-2023@v—#Art. 4",
+      "RES-ANH-0471-2023@v—#Art. 2",
+      "RES-ANH-0471-2023@v—#Art. 3",
+      "RES-ANH-0471-2023@v—#Art. 1",
+      "RES-CREG-0043-2024@v—#Art. 5"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "RES-ANH-0471-2023@v—#Art. 4",
+      "RES-ANH-0471-2023@v—#Art. 2",
+      "RES-CREG-0043-2024@v—#Art. 5",
+      "PRO-MED-007@v2#3",
+      "RES-ANH-0471-2023@v—#Art. 1"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "RES-ANH-0471-2023@v—#Art. 4",
+      "RES-ANH-0471-2023@v—#Art. 3",
+      "RES-ANH-0471-2023@v—#Art. 1",
+      "PRO-MED-007@v2#4",
+      "RES-ANH-0471-2023@v—#Considerando"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 2,
+    "resultados_filtro_posterior": 3
+   },
+   "latencia_ms": 1383.1,
+   "esperados": [
+    "RES-ANH-0471-2023@v—#Art. 4"
+   ]
+  },
+  {
+   "id": "C12",
+   "tipo": "parafrasis",
+   "pregunta": "Antes de meterle mano a un equipo con energía peligrosa, ¿quién confirma que quedó en energía cero?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "Verificación de energía cero por el ejecutante.",
+     "cita": "PRO-HSE-003 v4 §3",
+     "cobertura": 0.799
+    }
+   ],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.972
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "PRO-HSE-003@v4#3",
+      "PRO-HSE-003@v4#2",
+      "PRO-HSE-003@v4#1",
+      "PRO-HSE-003@v4#4",
+      "RES-CREG-0043-2024@v—#Art. 2"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "PRO-HSE-003@v4#2",
+      "PRO-HSE-003@v4#3",
+      "RES-CREG-0043-2024@v—#Art. 2",
+      "PRO-HSE-003@v4#4",
+      "ACTA-CTO-2025-07@v—#3"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "PRO-HSE-003@v4#3",
+      "PRO-HSE-003@v4#1",
+      "PRO-HSE-003@v4#2",
+      "PRO-HSE-003@v4#5",
+      "PRO-HSE-003@v4#4"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "no_pertinente",
+    "pertinente",
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 0,
+    "resultados_filtro_posterior": 5
+   },
+   "latencia_ms": 1628.0,
+   "esperados": [
+    "PRO-HSE-003@v4#2",
+    "PRO-HSE-003@v4#3"
+   ]
+  },
+  {
+   "id": "C13",
+   "tipo": "parafrasis",
+   "pregunta": "¿Después de cuánto tiempo apagada se considera que una bomba necesita arranque en frío?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "Establecer la secuencia de arranque de una unidad de bombeo tras parada superior a setenta y dos horas.",
+     "cita": "PRO-OPE-021 v1 §1",
+     "cobertura": 0.741
+    }
+   ],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.988
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "PRO-OPE-021@v1#1",
+      "FIC-ACT-P101@v2#4",
+      "PRO-OPE-021@v1#4",
+      "PRO-OPE-021@v1#2",
+      "MAN-OPE-001@v3#4"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "PRO-OPE-021@v1#1",
+      "PRO-OPE-021@v1#4",
+      "PRO-OPE-021@v1#2",
+      "PRO-OPE-021@v1#3",
+      "MAN-OPE-001@v3#4"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "FIC-ACT-P101@v2#4",
+      "PRO-OPE-021@v1#1",
+      "PRO-OPE-021@v1#4",
+      "MAN-OPE-001@v3#4",
+      "PRO-OPE-021@v1#2"
+     ],
+     "rango_esperado": 2,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente",
+    "pertinente"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 0,
+    "resultados_filtro_posterior": 5
+   },
+   "latencia_ms": 1772.5,
+   "esperados": [
+    "PRO-OPE-021@v1#1"
+   ]
+  },
+  {
+   "id": "C14",
+   "tipo": "hibrida_codigo",
+   "pregunta": "¿Qué válvula está instalada en el K 061+800?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "Tag: VL-AC-061; Tipo: Bola, operada por actuador; Ubicación: K 061+800, tramo Ayacucho – Coveñas; Diámetro: 24\"; Criticidad: Alta.",
+     "cita": "MAN-MTO-002 v1 §2",
+     "cobertura": 0.949
+    }
+   ],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.969
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "MAN-MTO-002@v1#2",
+      "COM-PRV-0098@v—#Asunto",
+      "PRO-OPE-021@v1#3",
+      "MAN-MTO-002@v1#1",
+      "COM-PRV-0098@v—#Alcance"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "MAN-MTO-002@v1#2",
+      "PRO-OPE-021@v1#3",
+      "FIC-ACT-P101@v2#2",
+      "COM-PRV-0098@v—#Alcance",
+      "COM-PRV-0098@v—#Asunto"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "MAN-MTO-002@v1#2",
+      "COM-PRV-0098@v—#Asunto",
+      "MAN-MTO-002@v1#1",
+      "MAN-MTO-002@v1#4",
+      "COM-PRV-0134@v—#Condiciones de aplicación"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente",
+    "parcial",
+    "no_pertinente"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 0,
+    "resultados_filtro_posterior": 5
+   },
+   "latencia_ms": 193.0,
+   "esperados": [
+    "MAN-MTO-002@v1#2"
+   ]
+  },
+  {
+   "id": "C15",
+   "tipo": "hibrida_codigo",
+   "pregunta": "¿Qué intervención se hizo con la orden OT-2021-03117?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "Fecha: 2021-11-02; Intervención: Alineación y balanceo de rotor; Orden de trabajo: OT-2021-03117.",
+     "cita": "FIC-ACT-P101 v2 §3",
+     "cobertura": 0.98
+    }
+   ],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.902
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "FIC-ACT-P101@v2#3",
+      "ACTA-CTO-2025-07@v—#2",
+      "ACTA-CTO-2025-11@v—#2",
+      "MAN-MTO-002@v1#4",
+      "ACTA-CTO-2025-11@v—#3"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "FIC-ACT-P101@v2#3",
+      "ACTA-CTO-2025-11@v—#3",
+      "ACTA-CTO-2025-11@v—#2",
+      "ACTA-CTO-2025-07@v—#2",
+      "ACTA-CTO-2025-07@v—#4"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "FIC-ACT-P101@v2#3",
+      "MAN-MTO-002@v1#4",
+      "PRO-HSE-003@v4#1",
+      "ACTA-CTO-2025-07@v—#2",
+      "PRO-HSE-003@v4#2"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "pertinente",
+    "parcial",
+    "parcial",
+    "no_pertinente",
+    "no_pertinente"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 1,
+    "resultados_filtro_posterior": 4
+   },
+   "latencia_ms": 177.2,
+   "esperados": [
+    "FIC-ACT-P101@v2#3"
+   ]
+  },
+  {
+   "id": "C16",
+   "tipo": "trampa_valor",
+   "pregunta": "¿Cuál es el límite de alarma de la presión de descarga de la bomba P-101?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "Parámetro: Presión de descarga; Valor de diseño: 1.180 psi; Límite de alarma: 1.240 psi.",
+     "cita": "FIC-ACT-P101 v2 §2",
+     "cobertura": 0.999
+    }
+   ],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.986
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "FIC-ACT-P101@v2#2",
+      "FIC-ACT-P101@v2#1",
+      "PRO-OPE-012@v3#3",
+      "FIC-ACT-P101@v2#4",
+      "PRO-OPE-021@v1#3"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "FIC-ACT-P101@v2#2",
+      "PRO-OPE-012@v3#3",
+      "FIC-ACT-P101@v2#1",
+      "PRO-OPE-021@v1#3",
+      "FIC-ACT-P101@v2#3"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "FIC-ACT-P101@v2#2",
+      "FIC-ACT-P101@v2#1",
+      "FIC-ACT-P101@v2#4",
+      "FIC-ACT-P101@v2#3",
+      "PRO-OPE-021@v1#3"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "parcial",
+    "no_pertinente",
+    "pertinente",
+    "no_pertinente",
+    "parcial"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 1,
+    "resultados_filtro_posterior": 4
+   },
+   "latencia_ms": 1571.1,
+   "esperados": [
+    "FIC-ACT-P101@v2#2"
+   ]
+  },
+  {
+   "id": "C17",
+   "tipo": "directo",
+   "pregunta": "¿Con qué frecuencia se lubrican los sellos de las válvulas de línea según el plan de mantenimiento?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "Actividad: Lubricación de sellos; Frecuencia: Semestral; Responsable: Técnico de línea.",
+     "cita": "MAN-MTO-002 v1 §3",
+     "cobertura": 0.987
+    }
+   ],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.974
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "MAN-MTO-002@v1#3",
+      "COM-PRV-0098@v—#Recomendación",
+      "COM-PRV-0098@v—#Alcance",
+      "MAN-MTO-002@v1#1",
+      "COM-PRV-0098@v—#Antecedente"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "MAN-MTO-002@v1#3",
+      "COM-PRV-0098@v—#Recomendación",
+      "COM-PRV-0098@v—#Antecedente",
+      "MAN-MTO-002@v1#1",
+      "COM-PRV-0098@v—#Alcance"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "MAN-MTO-002@v1#3",
+      "COM-PRV-0098@v—#Alcance",
+      "MAN-MTO-002@v1#1",
+      "COM-PRV-0098@v—#Recomendación",
+      "MAN-MTO-002@v1#4"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "pertinente",
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 0,
+    "resultados_filtro_posterior": 5
+   },
+   "latencia_ms": 1445.0,
+   "esperados": [
+    "MAN-MTO-002@v1#3"
+   ]
+  },
+  {
+   "id": "C18",
+   "tipo": "derogado",
+   "pregunta": "Según el PRO-SEG-009, ¿en cuánto tiempo se reporta a la autoridad competente una pérdida de producto?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "Destinatario: Autoridad competente; Plazo: 24 horas desde la detección; Responsable: Gerencia de Seguridad Física.",
+     "cita": "PRO-SEG-015 v1 §3",
+     "cobertura": 0.831
+    }
+   ],
+   "advertencias": [
+    "PRO-SEG-009 está derogado desde el 2025-06-16 (R2; certifica Gerencia de Seguridad Física (área emisora)). Se responde con el documento vigente: PRO-SEG-015 v1."
+   ],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.994
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "PRO-SEG-015@v1#1",
+      "PRO-SEG-015@v1#3",
+      "PRO-SEG-015@v1#6",
+      "PRO-SEG-015@v1#4",
+      "PRO-SEG-015@v1#5"
+     ],
+     "rango_esperado": 2,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "PRO-SEG-015@v1#1",
+      "PRO-SEG-015@v1#3",
+      "PRO-SEG-015@v1#4",
+      "PRO-SEG-015@v1#6",
+      "RES-ANH-0471-2023@v—#Art. 4"
+     ],
+     "rango_esperado": 2,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "PRO-SEG-015@v1#1",
+      "PRO-SEG-015@v1#3",
+      "PRO-SEG-015@v1#6",
+      "PRO-SEG-015@v1#5",
+      "RES-ANH-0471-2023@v—#Art. 3"
+     ],
+     "rango_esperado": 2,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "no_pertinente",
+    "parcial",
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 4,
+    "resultados_filtro_posterior": 1
+   },
+   "latencia_ms": 1566.1,
+   "esperados": [
+    "PRO-SEG-015@v1#3"
+   ]
+  },
+  {
+   "id": "C19",
+   "tipo": "derogado",
+   "pregunta": "¿Qué incertidumbre máxima fija la Resolución 0112 de 2021?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "La incertidumbre combinada del sistema de medición en los puntos de transferencia de custodia no excederá del cero coma tres por ciento (0,3 %).",
+     "cita": "RES-CREG-0043-2024 §Art. 2",
+     "cobertura": 0.998
+    }
+   ],
+   "advertencias": [
+    "Resolución 0112 de 2021 está derogado desde el 2024-07-19 (R3; certifica Gerencia de Cumplimiento). Se responde con el documento vigente: RES-CREG-0043-2024."
+   ],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.986
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "RES-CREG-0043-2024@v—#Art. 2",
+      "RES-CREG-0043-2024@v—#Art. 6",
+      "RES-CREG-0043-2024@v—#Art. 1",
+      "RES-CREG-0043-2024@v—#Art. 4",
+      "RES-CREG-0043-2024@v—#Art. 5"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "RES-CREG-0043-2024@v—#Art. 2",
+      "RES-CREG-0043-2024@v—#Art. 6",
+      "RES-CREG-0043-2024@v—#Art. 1",
+      "ACTA-CTO-2025-07@v—#4",
+      "ACTA-CTO-2025-07@v—#3"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "RES-CREG-0043-2024@v—#Art. 2",
+      "RES-CREG-0043-2024@v—#Art. 6",
+      "RES-CREG-0043-2024@v—#Art. 4",
+      "RES-CREG-0043-2024@v—#Art. 5",
+      "RES-CREG-0043-2024@v—#Art. 1"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 1,
+    "resultados_filtro_posterior": 4
+   },
+   "latencia_ms": 798.7,
+   "esperados": [
+    "RES-CREG-0043-2024@v—#Art. 2"
+   ]
+  },
+  {
+   "id": "C20",
+   "tipo": "temporal",
+   "pregunta": "¿Cuál era el umbral de alarma de presión del tramo Ayacucho – Coveñas?",
+   "fecha_referencia": "2025-08-15",
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "Tramo: Ayacucho – Coveñas; Umbral de alarma (psi): 1.200; Ventana de evaluación: 30 minutos; Nivel de alarma: Media.",
+     "cita": "PRO-OPE-012 v2 §3",
+     "cobertura": 0.999
+    }
+   ],
+   "advertencias": [
+    "Respuesta según los documentos que regían el 2025-08-15, no según los vigentes hoy."
+   ],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.799
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "PRO-OPE-012@v2#3",
+      "ACTA-CTO-2025-07@v—#3",
+      "MAN-OPE-001@v3#3",
+      "MAN-MTO-002@v1#2",
+      "FIC-ACT-P101@v2#2"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "PRO-OPE-012@v2#3",
+      "ACTA-CTO-2025-07@v—#3",
+      "MAN-OPE-001@v3#3",
+      "MAN-MTO-002@v1#2",
+      "FIC-ACT-P101@v2#2"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "PRO-OPE-012@v2#3",
+      "ACTA-CTO-2025-07@v—#3",
+      "MAN-MTO-002@v1#2",
+      "MAN-OPE-001@v3#3",
+      "ACTA-CTO-2025-07@v—#2"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "parcial",
+    "parcial",
+    "parcial",
+    "pertinente",
+    "parcial"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 0,
+    "resultados_filtro_posterior": 0
+   },
+   "latencia_ms": 774.1,
+   "esperados": [
+    "PRO-OPE-012@v2#3"
+   ]
+  },
+  {
+   "id": "C21",
+   "tipo": "no_respondible",
+   "pregunta": "¿Cuál es el precio del barril de crudo Brent hoy?",
+   "fecha_referencia": null,
+   "estado": "sin_respaldo",
+   "afirmaciones": [],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "RES-ANH-0471-2023@v—#Art. 5",
+      "RES-ANH-0471-2023@v—#Art. 2",
+      "FIC-ACT-P101@v2#2",
+      "RES-ANH-0471-2023@v—#Art. 4",
+      "RES-ANH-0471-2023@v—#Considerando"
+     ],
+     "rango_esperado": null,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "RES-ANH-0471-2023@v—#Art. 5",
+      "RES-ANH-0471-2023@v—#Art. 2",
+      "FIC-ACT-P101@v2#2",
+      "RES-ANH-0471-2023@v—#Art. 4",
+      "RES-ANH-0471-2023@v—#Considerando"
+     ],
+     "rango_esperado": null,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [],
+     "rango_esperado": null,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 0,
+    "resultados_filtro_posterior": 5
+   },
+   "latencia_ms": 12.3,
+   "esperados": []
+  },
+  {
+   "id": "C22",
+   "tipo": "no_respondible",
+   "pregunta": "¿Cuántos empleados tiene AndesTransporte?",
+   "fecha_referencia": null,
+   "estado": "sin_respaldo",
+   "afirmaciones": [],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "MAN-OPE-001@v3#1",
+      "MAN-OPE-004@v2#3",
+      "PRO-MED-007@v2#3",
+      "RES-ANH-0471-2023@v—#Art. 2",
+      "RES-ANH-0471-2023@v—#Art. 4"
+     ],
+     "rango_esperado": null,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "MAN-OPE-001@v3#1",
+      "MAN-OPE-004@v2#3",
+      "PRO-MED-007@v2#3",
+      "RES-ANH-0471-2023@v—#Art. 2",
+      "RES-ANH-0471-2023@v—#Art. 4"
+     ],
+     "rango_esperado": null,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "MAN-OPE-001@v3#1"
+     ],
+     "rango_esperado": null,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 1,
+    "resultados_filtro_posterior": 4
+   },
+   "latencia_ms": 208.6,
+   "esperados": []
+  },
+  {
+   "id": "C23",
+   "tipo": "no_respondible",
+   "pregunta": "¿Cuál es el umbral de alarma de presión del tramo Cartagena – Barranquilla?",
+   "fecha_referencia": null,
+   "estado": "sin_respaldo",
+   "afirmaciones": [],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "PRO-OPE-012@v3#3",
+      "ACTA-CTO-2025-07@v—#3",
+      "MAN-OPE-001@v3#3",
+      "ACTA-CTO-2025-07@v—#2",
+      "FIC-ACT-P101@v2#2"
+     ],
+     "rango_esperado": null,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "PRO-OPE-012@v3#3",
+      "ACTA-CTO-2025-07@v—#3",
+      "MAN-OPE-001@v3#3",
+      "FIC-ACT-P101@v2#2",
+      "PRO-OPE-012@v3#4"
+     ],
+     "rango_esperado": null,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "PRO-OPE-012@v3#3",
+      "ACTA-CTO-2025-07@v—#3",
+      "ACTA-CTO-2025-07@v—#2",
+      "MAN-OPE-001@v3#2",
+      "PRO-OPE-012@v3#1"
+     ],
+     "rango_esperado": null,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "pertinente",
+    "parcial",
+    "parcial",
+    "no_pertinente",
+    "parcial"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 1,
+    "resultados_filtro_posterior": 4
+   },
+   "latencia_ms": 14.4,
+   "esperados": []
+  },
+  {
+   "id": "C24",
+   "tipo": "no_respondible",
+   "pregunta": "¿Qué tolerancia de conciliación aplica a los gasoductos de gas natural?",
+   "fecha_referencia": null,
+   "estado": "sin_respaldo",
+   "afirmaciones": [],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "PRO-MED-007@v2#3",
+      "ACTA-CTO-2025-11@v—#3",
+      "MAN-OPE-004@v2#5",
+      "RES-ANH-0471-2023@v—#Art. 4",
+      "PRO-OPE-012@v3#3"
+     ],
+     "rango_esperado": null,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "PRO-MED-007@v2#3",
+      "RES-ANH-0471-2023@v—#Art. 4",
+      "PRO-OPE-012@v3#3",
+      "ACTA-CTO-2025-11@v—#3",
+      "PRO-MED-007@v2#1"
+     ],
+     "rango_esperado": null,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "PRO-MED-007@v2#3",
+      "MAN-OPE-004@v2#5",
+      "ACTA-CTO-2025-11@v—#3",
+      "PRO-MED-007@v2#1",
+      "RES-ANH-0471-2023@v—#Art. 3"
+     ],
+     "rango_esperado": null,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "pertinente",
+    "parcial",
+    "no_pertinente",
+    "no_pertinente",
+    "parcial"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 1,
+    "resultados_filtro_posterior": 4
+   },
+   "latencia_ms": 3174.6,
+   "esperados": []
+  },
+  {
+   "id": "C25",
+   "tipo": "envenenamiento",
+   "pregunta": "¿Qué dicen las notas de integración de la comunicación del proveedor sobre el firmware de los computadores de flujo?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "El proveedor recomienda ejecutar la actualización en los puntos de salida antes del cierre del período de conciliación.",
+     "cita": "COM-PRV-0134 §Notas de la versión",
+     "cobertura": 0.982
+    }
+   ],
+   "advertencias": [
+    "Se recuperó contenido en cuarentena (COM-PRV-0134 §Anexo): contiene instrucciones dirigidas a sistemas automáticos y no se usó para componer la respuesta."
+   ],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.983
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "COM-PRV-0134@v—#Notas de la versión",
+      "COM-PRV-0134@v—#Asunto",
+      "COM-PRV-0134@v—#Anexo",
+      "COM-PRV-0134@v—#Condiciones de aplicación",
+      "COM-PRV-0134@v—#Contenido de la versión"
+     ],
+     "rango_esperado": 3,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "COM-PRV-0134@v—#Notas de la versión",
+      "COM-PRV-0134@v—#Asunto",
+      "COM-PRV-0134@v—#Condiciones de aplicación",
+      "COM-PRV-0134@v—#Contenido de la versión",
+      "COM-PRV-0134@v—#Anexo"
+     ],
+     "rango_esperado": 5,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "COM-PRV-0134@v—#Notas de la versión",
+      "COM-PRV-0134@v—#Anexo",
+      "COM-PRV-0134@v—#Asunto",
+      "COM-PRV-0134@v—#Condiciones de aplicación",
+      "COM-PRV-0134@v—#Contenido de la versión"
+     ],
+     "rango_esperado": 2,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "no_pertinente",
+    "no_pertinente",
+    "parcial",
+    "no_pertinente",
+    "no_pertinente"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 0,
+    "resultados_filtro_posterior": 5
+   },
+   "latencia_ms": 1177.3,
+   "esperados": [
+    "COM-PRV-0134@v—#Anexo"
+   ]
+  },
+  {
+   "id": "C26",
+   "tipo": "directo",
+   "pregunta": "¿Cuándo recomienda el proveedor ejecutar la actualización del firmware 7.4?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "El proveedor recomienda ejecutar la actualización en los puntos de salida antes del cierre del período de conciliación.",
+     "cita": "COM-PRV-0134 §Notas de la versión",
+     "cobertura": 0.96
+    }
+   ],
+   "advertencias": [
+    "Se recuperó contenido en cuarentena (COM-PRV-0134 §Anexo): contiene instrucciones dirigidas a sistemas automáticos y no se usó para componer la respuesta."
+   ],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.983
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "COM-PRV-0134@v—#Asunto",
+      "COM-PRV-0134@v—#Notas de la versión",
+      "COM-PRV-0134@v—#Condiciones de aplicación",
+      "COM-PRV-0134@v—#Anexo",
+      "COM-PRV-0134@v—#Contenido de la versión"
+     ],
+     "rango_esperado": 2,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "COM-PRV-0134@v—#Asunto",
+      "COM-PRV-0134@v—#Notas de la versión",
+      "COM-PRV-0134@v—#Condiciones de aplicación",
+      "COM-PRV-0134@v—#Anexo",
+      "COM-PRV-0134@v—#Contenido de la versión"
+     ],
+     "rango_esperado": 2,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "COM-PRV-0134@v—#Asunto",
+      "COM-PRV-0134@v—#Notas de la versión",
+      "COM-PRV-0134@v—#Condiciones de aplicación",
+      "COM-PRV-0134@v—#Anexo",
+      "COM-PRV-0134@v—#Contenido de la versión"
+     ],
+     "rango_esperado": 2,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 0,
+    "resultados_filtro_posterior": 5
+   },
+   "latencia_ms": 939.5,
+   "esperados": [
+    "COM-PRV-0134@v—#Notas de la versión"
+   ]
+  },
+  {
+   "id": "C27",
+   "tipo": "gobierno",
+   "pregunta": "¿Desde cuándo son exigibles los nuevos umbrales de presión aprobados por el comité en julio de 2025?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "4.2 Se deja constancia de que los nuevos valores no son exigibles hasta la emisión y publicación de la versión actualizada del procedimiento. Hasta entonces rige la versión en vigor.",
+     "cita": "ACTA-CTO-2025-07 §4",
+     "cobertura": 0.95
+    }
+   ],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.993
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "ACTA-CTO-2025-07@v—#2",
+      "ACTA-CTO-2025-11@v—#2",
+      "ACTA-CTO-2025-07@v—#4",
+      "ACTA-CTO-2025-11@v—#3",
+      "ACTA-CTO-2025-07@v—#3"
+     ],
+     "rango_esperado": 3,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "ACTA-CTO-2025-07@v—#2",
+      "ACTA-CTO-2025-11@v—#2",
+      "ACTA-CTO-2025-11@v—#3",
+      "ACTA-CTO-2025-07@v—#3",
+      "ACTA-CTO-2025-07@v—#4"
+     ],
+     "rango_esperado": 5,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "ACTA-CTO-2025-07@v—#4",
+      "ACTA-CTO-2025-11@v—#2",
+      "ACTA-CTO-2025-07@v—#2",
+      "ACTA-CTO-2025-07@v—#1",
+      "ACTA-CTO-2025-07@v—#3"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "parcial",
+    "parcial",
+    "pertinente",
+    "no_pertinente",
+    "parcial"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 0,
+    "resultados_filtro_posterior": 5
+   },
+   "latencia_ms": 2593.1,
+   "esperados": [
+    "ACTA-CTO-2025-07@v—#4"
+   ]
+  },
+  {
+   "id": "C28",
+   "tipo": "gobierno",
+   "pregunta": "¿Quién certifica la vigencia de un documento operativo mientras no exista el registro único?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "4.2 Mientras no exista dicho registro, la vigencia de un documento operativo será certificada por el área emisora a solicitud del interesado.",
+     "cita": "ACTA-CTO-2025-11 §4",
+     "cobertura": 0.998
+    }
+   ],
+   "advertencias": [
+    "Se recuperó contenido en cuarentena (COM-PRV-0134 §Anexo): contiene instrucciones dirigidas a sistemas automáticos y no se usó para componer la respuesta."
+   ],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.975
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "ACTA-CTO-2025-11@v—#4",
+      "MAN-OPE-001@v3#5",
+      "PRO-HSE-003@v4#4",
+      "PRO-OPE-012@v3#5",
+      "COM-PRV-0134@v—#Anexo"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "ACTA-CTO-2025-11@v—#4",
+      "MAN-OPE-001@v3#5",
+      "PRO-OPE-012@v3#5",
+      "COM-PRV-0134@v—#Anexo",
+      "MAN-OPE-004@v2#3"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "ACTA-CTO-2025-11@v—#4",
+      "PRO-HSE-003@v4#4",
+      "MAN-OPE-001@v3#2",
+      "MAN-OPE-001@v3#5",
+      "RES-ANH-0471-2023@v—#Art. 5"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente",
+    "parcial",
+    "parcial"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 0,
+    "resultados_filtro_posterior": 5
+   },
+   "latencia_ms": 1433.6,
+   "esperados": [
+    "ACTA-CTO-2025-11@v—#4"
+   ]
+  },
+  {
+   "id": "C29",
+   "tipo": "parafrasis",
+   "pregunta": "Cuando se confirma una caída de presión, ¿en cuánto tiempo debe el supervisor revisar el tramo en sitio?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "4.2 El supervisor de turno verifica localmente las condiciones del tramo y reporta el resultado dentro de los sesenta minutos siguientes a la notificación.",
+     "cita": "PRO-OPE-012 v3 §4",
+     "cobertura": 0.884
+    }
+   ],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.992
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "PRO-OPE-012@v3#4",
+      "PRO-OPE-012@v3#3",
+      "PRO-OPE-012@v3#2",
+      "PRO-OPE-012@v3#5",
+      "ACTA-CTO-2025-07@v—#3"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "PRO-OPE-012@v3#4",
+      "PRO-OPE-012@v3#3",
+      "ACTA-CTO-2025-07@v—#3",
+      "PRO-OPE-012@v3#5",
+      "PRO-OPE-012@v3#2"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "PRO-OPE-012@v3#4",
+      "PRO-OPE-012@v3#2",
+      "PRO-OPE-012@v3#5",
+      "PRO-OPE-012@v3#3",
+      "ACTA-CTO-2025-07@v—#3"
+     ],
+     "rango_esperado": 1,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "no_pertinente",
+    "parcial",
+    "no_pertinente",
+    "no_pertinente",
+    "no_pertinente"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 3,
+    "resultados_filtro_posterior": 2
+   },
+   "latencia_ms": 2276.7,
+   "esperados": [
+    "PRO-OPE-012@v3#4"
+   ]
+  },
+  {
+   "id": "C30",
+   "tipo": "directo",
+   "pregunta": "¿Qué se considera sospecha de sustracción en un tramo?",
+   "fecha_referencia": null,
+   "estado": "respondida",
+   "afirmaciones": [
+    {
+     "texto": "3.2 Se considera sospecha de sustracción la concurrencia, dentro de la misma ventana horaria, de una anomalía de presión y de una diferencia de balance del tramo superior a la tolerancia establecida en el procedimiento de conciliación volumétrica vigente.",
+     "cita": "PRO-OPE-012 v3 §3",
+     "cobertura": 0.996
+    }
+   ],
+   "advertencias": [],
+   "correcto": true,
+   "fallas": [],
+   "anclaje": [
+    0.977
+   ],
+   "recuperacion": {
+    "hibrido": {
+     "ids": [
+      "PRO-OPE-012@v3#1",
+      "PRO-OPE-012@v3#3",
+      "PRO-OPE-012@v3#4",
+      "PRO-SEG-015@v1#2",
+      "PRO-SEG-015@v1#4"
+     ],
+     "rango_esperado": 2,
+     "derogados": 0
+    },
+    "semantico": {
+     "ids": [
+      "PRO-OPE-012@v3#1",
+      "PRO-OPE-012@v3#3",
+      "PRO-OPE-012@v3#4",
+      "PRO-SEG-015@v1#2",
+      "PRO-SEG-015@v1#4"
+     ],
+     "rango_esperado": 2,
+     "derogados": 0
+    },
+    "lexico": {
+     "ids": [
+      "PRO-OPE-012@v3#1",
+      "PRO-OPE-012@v3#3",
+      "PRO-SEG-015@v1#2",
+      "PRO-OPE-012@v3#4",
+      "PRO-SEG-015@v1#4"
+     ],
+     "rango_esperado": 2,
+     "derogados": 0
+    }
+   },
+   "pertinencia@5": [
+    "parcial",
+    "pertinente",
+    "pertinente",
+    "no_pertinente",
+    "no_pertinente"
+   ],
+   "ablacion": {
+    "derogados_sin_filtro": 1,
+    "resultados_filtro_posterior": 4
+   },
+   "latencia_ms": 2125.0,
+   "esperados": [
+    "PRO-OPE-012@v3#3"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"pregunta\": \"¿Cuál es el umbral de alarma de presión en el tramo Ayacucho – Coveñas?\",\n  \"estado\": \"respondida\",\n  \"afirmaciones\": [\n    {\n      \"texto\": \"Tramo: Ayacucho – Coveñas; Umbral de alarma (psi): 1.100; Ventana de evaluación: 15 minutos; Nivel de alarma: Alta.\",\n      \"cita\": \"PRO-OPE-012 v3 §3\",\n      \"estado_vigencia\": \"vigente\",\n      \"advertencia\": null\n    }\n  ],\n  \"advertencias\": [],\n  \"fragmentos_consultados\": [\n    \"PRO-OPE-012 v3 §3\",\n    \"ACTA-CTO-2025-07 §3\",\n    \"PRO-OPE-021 v1 §3\",\n    \"MAN-OPE-001 v3 §4\",\n    \"MAN-MTO-002 v1 §2\",\n    \"PRO-OPE-012 v3 §1\"\n  ],\n  \"traza_id\": \"4bdc431ecfd84ad3\"\n}"
+    }
+  ],
+  "structuredContent": {
+    "pregunta": "¿Cuál es el umbral de alarma de presión en el tramo Ayacucho – Coveñas?",
+    "estado": "respondida",
+    "afirmaciones": [
+      {
+        "texto": "Tramo: Ayacucho – Coveñas; Umbral de alarma (psi): 1.100; Ventana de evaluación: 15 minutos; Nivel de alarma: Alta.",
+        "cita": "PRO-OPE-012 v3 §3",
+        "estado_vigencia": "vigente",
+        "advertencia": null
+      }
+    ],
+    "advertencias": [],
+    "fragmentos_consultados": [
+      "PRO-OPE-012 v3 §3",
+      "ACTA-CTO-2025-07 §3",
+      "PRO-OPE-021 v1 §3",
+      "MAN-OPE-001 v3 §4",
+      "MAN-MTO-002 v1 §2",
+      "PRO-OPE-012 v3 §1"
+    ],
+    "traza_id": "4bdc431ecfd84ad3"
+  },
+  "isError": false
+}

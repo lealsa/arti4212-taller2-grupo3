@@ -1,0 +1,111 @@
+# Contrato del corpus documental — PetroAndes / AndesTransporte
+# Versión del contrato: 1.0.0 · Dueño del corpus: Gerencia de Cumplimiento (custodio del registro de vigencia)
+# Operador técnico del índice: equipo de plataforma de integración.
+#
+# El contrato declara, por clase de documento, cómo se parte, qué metadatos lleva cada fragmento,
+# con qué regla se determina la vigencia y quién la certifica. La vigencia es una decisión de
+# gobierno: el motor de reglas PROPONE, el registro de vigencia (config/registro_vigencia.yaml)
+# CERTIFICA, y la ingesta se detiene si ambos no coinciden.
+
+version_contrato: "1.0.0"
+dueno_corpus: "Gerencia de Cumplimiento"
+operador_indice: "Plataforma de integración (TI)"
+
+# Clasificación a partir del campo «Tipo» de la cabecera del documento.
+clasificacion:
+  "Manual de operación": manual
+  "Manual de mantenimiento": manual
+  "Procedimiento operativo": procedimiento
+  "Procedimiento HSE": procedimiento
+  "Resolución regulatoria (ficticia)": normativa
+  "Acta de comité": acta
+  "Comunicación de proveedor": comunicacion_proveedor
+  "Ficha técnica de activo": ficha_activo
+
+clases:
+  manual:
+    naturaleza: normativo
+    origen: interno
+    particion: "Por sección numerada (1., 2., …). Las tablas se convierten en filas autocontenidas «columna: valor»; no se parten por caracteres."
+    justificacion_particion: "Cada sección de un manual trata un solo asunto (objeto, definiciones, parámetros por tramo). Partir por caracteres separa el valor de su tramo y de su unidad."
+    tamano_maximo_caracteres: 2500
+    regla_vigencia: "R1 sucesión de versiones del mismo código (metadato «Reemplaza a» y número de versión). Además, R5: ningún manual se presume vigente sin certificación del área emisora (ACTA-CTO-2025-11 §3.3 y §4.2)."
+    certifica: "Área emisora del manual, mientras no exista el registro único de vigencia (ACTA-CTO-2025-11 §4.2)."
+    estado_sin_certificacion: pendiente_certificacion
+  procedimiento:
+    naturaleza: normativo
+    origen: interno
+    particion: "Por sección numerada; las cláusulas 3.1, 3.2… son unidades de respuesta dentro de la sección."
+    justificacion_particion: "Las preguntas de operación se responden con una cláusula o una fila de tabla; la sección da el contexto suficiente para filtrar y citar."
+    tamano_maximo_caracteres: 2500
+    regla_vigencia: "R1 sucesión de versiones del mismo código; R2 reemplazo entre códigos distintos declarado en «Reemplaza a» (PRO-SEG-015 reemplaza a PRO-SEG-009)."
+    certifica: "Área emisora del procedimiento (Centro de Control, Gerencia de Medición, Seguridad Física, Vicepresidencia HSE)."
+    estado_sin_certificacion: pendiente_certificacion
+  normativa:
+    naturaleza: normativo
+    origen: externo
+    particion: "Por artículo."
+    justificacion_particion: "El artículo es la unidad citable de una resolución y la que el regulador usa para referirse a ella."
+    tamano_maximo_caracteres: 2500
+    regla_vigencia: "R3 derogatoria expresa en el texto de otra resolución («deroga … la Resolución NNNN de AAAA»). El campo «Reemplaza a» de las resoluciones no lo declara: hay que leer el articulado."
+    certifica: "Gerencia de Cumplimiento, contra la publicación oficial del regulador."
+    estado_sin_certificacion: pendiente_certificacion
+  acta:
+    naturaleza: no_normativo
+    origen: interno
+    particion: "Por apartado (asistentes, desarrollo, decisiones, compromisos)."
+    justificacion_particion: "Las decisiones y los compromisos se consultan por separado del desarrollo de la sesión."
+    tamano_maximo_caracteres: 2500
+    regla_vigencia: "R4: un acta no tiene vigencia normativa. Es un registro histórico: se puede citar como antecedente, nunca como la norma. Sus decisiones rigen solo cuando se emite el documento que las incorpora (ACTA-CTO-2025-07 §4.2)."
+    certifica: "Secretaría del Comité Técnico Operativo (autenticidad del acta, no vigencia)."
+    estado_sin_certificacion: no_normativo
+  comunicacion_proveedor:
+    naturaleza: no_normativo
+    origen: externo
+    particion: "Por apartado (asunto, recomendación, alcance, anexos). Cada apartado se escanea en busca de instrucciones embebidas."
+    justificacion_particion: "Un anexo puede tener una naturaleza distinta del resto del documento; aislarlo permite poner en cuarentena solo esa parte sin retirar el documento."
+    tamano_maximo_caracteres: 2500
+    regla_vigencia: "R4: una comunicación de proveedor no modifica los planes del operador hasta que se incorpora en un manual o procedimiento (COM-PRV-0098, «Alcance»)."
+    certifica: "Gerencia que la recibe (Integridad y Mantenimiento o Medición), solo para su incorporación."
+    estado_sin_certificacion: no_normativo
+  ficha_activo:
+    naturaleza: normativo
+    origen: interno
+    particion: "Por sección; las tablas de datos de operación e histórico como filas autocontenidas."
+    justificacion_particion: "Los datos del activo se consultan por parámetro o por orden de trabajo, que son filas."
+    tamano_maximo_caracteres: 2500
+    regla_vigencia: "R1 sucesión de versiones del mismo código."
+    certifica: "Gerencia de Integridad y Mantenimiento (dueña del maestro de activos)."
+    estado_sin_certificacion: pendiente_certificacion
+
+# Metadatos mínimos de cada fragmento. Todo lo que el consumidor deba poder filtrar existe aquí
+# desde la ingesta: lo que no se inyecta ahora no se puede filtrar después sin reprocesar.
+metadatos_minimos:
+  - {campo: codigo, fuente: "cabecera del documento", uso: "cita, filtro, búsqueda léxica exacta"}
+  - {campo: version, fuente: "cabecera del documento", uso: "cita, vigencia"}
+  - {campo: seccion, fuente: "título de sección del PDF", uso: "cita"}
+  - {campo: titulo_seccion, fuente: "título de sección del PDF", uso: "cita legible"}
+  - {campo: clase, fuente: "clasificación por «Tipo»", uso: "filtro, regla de vigencia"}
+  - {campo: naturaleza, fuente: "contrato", uso: "distinguir norma de antecedente"}
+  - {campo: origen, fuente: "contrato", uso: "confianza: interno o externo"}
+  - {campo: area_emisora, fuente: "cabecera del documento", uso: "filtro, a quién pedir certificación"}
+  - {campo: fecha_emision, fuente: "cabecera del documento", uso: "orden, vigencia temporal"}
+  - {campo: estado_vigencia, fuente: "registro de vigencia certificado", uso: "FILTRO OBLIGATORIO antes de la búsqueda"}
+  - {campo: vigente_desde, fuente: "registro de vigencia", uso: "consulta con fecha de referencia"}
+  - {campo: vigente_hasta, fuente: "registro de vigencia", uso: "consulta con fecha de referencia"}
+  - {campo: regla_vigencia, fuente: "registro de vigencia", uso: "trazabilidad de la decisión"}
+  - {campo: certificado_por, fuente: "registro de vigencia", uso: "responsable de la decisión"}
+  - {campo: reemplazado_por, fuente: "registro de vigencia", uso: "redirigir al vigente"}
+  - {campo: cuarentena, fuente: "escáner de instrucciones embebidas", uso: "no entregar el texto a consumidores automáticos"}
+  - {campo: sha256_documento, fuente: "archivo", uso: "detectar cambios (propagación)"}
+  - {campo: sha256_fragmento, fuente: "texto normalizado", uso: "evidencia de lo citado"}
+
+# Mecanismo de actualización (vocabulario de la sesión 7)
+actualizacion:
+  carga_inicial: "Consolidación: lectura completa de corpus/pdf y construcción del índice (comando `ingestar`)."
+  mantenimiento: "Propagación: el gestor documental publica un evento documento.publicado / documento.reemplazado; en el prototipo, `sincronizar` compara el SHA-256 de cada archivo y la versión del registro con el manifiesto del índice."
+  cambio_de_vigencia: "Solo metadatos: se actualiza el payload de los fragmentos afectados sin recalcular vectores."
+  latencia_comprometida:
+    cambio_de_vigencia: "≤ 15 minutos desde la certificación en el registro (un documento derogado no puede seguir citándose)."
+    documento_nuevo_o_modificado: "≤ 1 hora desde su publicación en el gestor documental."
+  cambio_de_modelo_embeddings: "Reindexación completa en una colección nueva y cambio atómico de alias (ADR-004)."

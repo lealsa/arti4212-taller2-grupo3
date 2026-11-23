@@ -1,0 +1,15 @@
+{
+  "capturado": "2026-11-22T17:13:34+00:00",
+  "inspector": "2.16.0",
+  "node": "v22.18.0",
+  "servidor": "petroandes-mcp (stdio)",
+  "estrategia": "A2",
+  "huella_embeddings": "st:intfloat/multilingual-e5-small@614241f622f53c4eeff9890bdc4f31cfecc418b3:384",
+  "coleccion": "corpus_petroandes__85f8fe1f65",
+  "revisiones": {
+    "intfloat/multilingual-e5-small": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "BAAI/bge-reranker-v2-m3": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+    "convaiinnovations/laya": "main"
+  },
+  "llamadas_fallidas": []
+}

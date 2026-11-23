@@ -1,0 +1,231 @@
+# Registro de vigencia documental — fuente de autoridad del índice
+#
+# Este archivo simula el «registro único de vigencia documental» que ACTA-CTO-2025-11 §4.1 encarga a
+# la Gerencia de Cumplimiento. Mientras ese registro no exista, la vigencia la certifica el área
+# emisora a solicitud del interesado (§4.2). En el prototipo, las certificaciones son SIMULADAS por
+# el equipo a partir de la evidencia del propio corpus (campo modo_certificacion). En producción,
+# cada entrada la firma el área indicada en certificado_por y el índice solo la lee.
+#
+# Estados:
+#   vigente                  el área certificó que rige
+#   derogado                 hay evidencia de reemplazo o derogatoria; nunca se cita como norma
+#   pendiente_certificacion  no hay evidencia de derogación, pero tampoco certificación; se cita con advertencia
+#   no_normativo             actas y comunicaciones: antecedente consultable, nunca la norma
+
+version_registro: "2026-11-17.1"
+custodio: "Gerencia de Cumplimiento"
+
+documentos:
+  - codigo: MAN-OPE-001
+    version: "3"
+    estado: pendiente_certificacion
+    vigente_desde: "2024-02-14"
+    vigente_hasta: null
+    regla: "R1 + R5"
+    evidencia:
+      - "MAN-OPE-001 v3, cabecera: reemplaza a MAN-OPE-001 v2 (es la versión más reciente del corpus)."
+      - "ACTA-CTO-2025-11 §3.3: al menos un manual dejó de aplicarse sin que quedara en documento alguno."
+    certificado_por: "Vicepresidencia de Transporte — Operaciones (área emisora)"
+    fecha_certificacion: null
+    advertencia: "Vigencia sin certificar: el corpus no permite saber si este manual sigue aplicándose. Solicite certificación al área emisora."
+
+  - codigo: MAN-OPE-004
+    version: "2"
+    estado: pendiente_certificacion
+    vigente_desde: "2022-08-30"
+    vigente_hasta: null
+    regla: "R1 + R5"
+    evidencia:
+      - "MAN-OPE-004 v2, cabecera: reemplaza a MAN-OPE-004 v1."
+      - "ACTA-CTO-2025-11 §3.3: al menos un manual dejó de aplicarse sin registro."
+    certificado_por: "Gerencia de Medición (área emisora)"
+    fecha_certificacion: null
+    advertencia: "Vigencia sin certificar: solicite certificación a la Gerencia de Medición."
+
+  - codigo: MAN-MTO-002
+    version: "1"
+    estado: pendiente_certificacion
+    vigente_desde: "2023-11-09"
+    vigente_hasta: null
+    regla: "R1 + R5"
+    evidencia:
+      - "MAN-MTO-002 v1 es la única versión del corpus."
+      - "COM-PRV-0098 «Alcance»: la recomendación del fabricante exige actualizar el manual aplicable; no consta que se haya actualizado."
+      - "ACTA-CTO-2025-11 §3.3: al menos un manual dejó de aplicarse sin registro."
+    certificado_por: "Gerencia de Integridad y Mantenimiento (área emisora)"
+    fecha_certificacion: null
+    advertencia: "Vigencia sin certificar: solicite certificación a la Gerencia de Integridad y Mantenimiento."
+
+  - codigo: PRO-HSE-003
+    version: "4"
+    estado: vigente
+    vigente_desde: "2024-10-07"
+    vigente_hasta: null
+    regla: "R1"
+    evidencia: ["PRO-HSE-003 v4, cabecera: reemplaza a PRO-HSE-003 v3; ningún documento posterior lo reemplaza."]
+    certificado_por: "Vicepresidencia HSE (área emisora)"
+    fecha_certificacion: "2026-11-17"
+
+  - codigo: PRO-MED-007
+    version: "1"
+    estado: derogado
+    vigente_desde: "2020-03-11"
+    vigente_hasta: "2025-04-22"
+    reemplazado_por: "PRO-MED-007 v2"
+    regla: "R1"
+    evidencia: ["PRO-MED-007 v2, cabecera: reemplaza a PRO-MED-007 v1 (emitida el 2025-04-22)."]
+    certificado_por: "Gerencia de Medición (área emisora)"
+    fecha_certificacion: "2026-11-17"
+
+  - codigo: PRO-MED-007
+    version: "2"
+    estado: vigente
+    vigente_desde: "2025-04-22"
+    vigente_hasta: null
+    regla: "R1"
+    evidencia:
+      - "PRO-MED-007 v2 es la versión más reciente."
+      - "ACTA-CTO-2025-11 §3.2: el tercer trimestre se concilió «bajo la nueva tolerancia»."
+    certificado_por: "Gerencia de Medición (área emisora)"
+    fecha_certificacion: "2026-11-17"
+
+  - codigo: PRO-OPE-012
+    version: "2"
+    estado: derogado
+    vigente_desde: "2021-05-18"
+    vigente_hasta: "2025-09-01"
+    reemplazado_por: "PRO-OPE-012 v3"
+    regla: "R1"
+    evidencia:
+      - "PRO-OPE-012 v3, cabecera: reemplaza a PRO-OPE-012 v2; §3.1: los umbrales de la v3 reemplazan íntegramente los de la versión anterior."
+      - "ACTA-CTO-2025-07 §4.2: los valores nuevos no eran exigibles hasta la emisión de la versión actualizada; la v2 rigió hasta el 2025-09-01."
+    certificado_por: "Centro de Control de Operaciones (área emisora)"
+    fecha_certificacion: "2026-11-17"
+
+  - codigo: PRO-OPE-012
+    version: "3"
+    estado: vigente
+    vigente_desde: "2025-09-01"
+    vigente_hasta: null
+    regla: "R1"
+    evidencia:
+      - "PRO-OPE-012 v3 es la versión más reciente."
+      - "ACTA-CTO-2025-11 §3.1: la versión actualizada fue emitida y se encuentra en aplicación."
+    certificado_por: "Centro de Control de Operaciones (área emisora)"
+    fecha_certificacion: "2026-11-17"
+
+  - codigo: PRO-OPE-021
+    version: "1"
+    estado: vigente
+    vigente_desde: "2023-05-30"
+    vigente_hasta: null
+    regla: "R1"
+    evidencia: ["PRO-OPE-021 v1 es la única versión; ningún documento lo reemplaza."]
+    certificado_por: "Centro de Control de Operaciones (área emisora)"
+    fecha_certificacion: "2026-11-17"
+
+  - codigo: PRO-SEG-009
+    version: "1"
+    estado: derogado
+    vigente_desde: "2019-07-04"
+    vigente_hasta: "2025-06-16"
+    reemplazado_por: "PRO-SEG-015 v1"
+    regla: "R2"
+    evidencia: ["PRO-SEG-015 v1 §1 y cabecera: reemplaza íntegramente a PRO-SEG-009 v1, que queda sin efecto desde el 2025-06-16; el código PRO-SEG-009 queda sin uso."]
+    certificado_por: "Gerencia de Seguridad Física (área emisora)"
+    fecha_certificacion: "2026-11-17"
+
+  - codigo: PRO-SEG-015
+    version: "1"
+    estado: vigente
+    vigente_desde: "2025-06-16"
+    vigente_hasta: null
+    regla: "R2"
+    evidencia: ["PRO-SEG-015 v1 reemplaza a PRO-SEG-009 v1; ningún documento posterior lo reemplaza."]
+    certificado_por: "Gerencia de Seguridad Física (área emisora)"
+    fecha_certificacion: "2026-11-17"
+
+  - codigo: RES-ANH-0471-2023
+    version: "—"
+    estado: vigente
+    vigente_desde: "2023-09-12"
+    vigente_hasta: null
+    regla: "R3"
+    evidencia: ["Ninguna resolución del corpus la deroga; Art. 5: rige desde su publicación."]
+    certificado_por: "Gerencia de Cumplimiento"
+    fecha_certificacion: "2026-11-17"
+
+  - codigo: RES-CREG-0112-2021
+    version: "—"
+    estado: derogado
+    vigente_desde: "2021-04-28"
+    vigente_hasta: "2024-07-19"
+    reemplazado_por: "RES-CREG-0043-2024"
+    regla: "R3"
+    evidencia: ["RES-CREG-0043-2024 Art. 6: deroga en su integridad la Resolución 0112 de 2021. El metadato «Reemplaza a» de la 0043 dice «—»: la derogatoria solo consta en el articulado."]
+    certificado_por: "Gerencia de Cumplimiento"
+    fecha_certificacion: "2026-11-17"
+
+  - codigo: RES-CREG-0043-2024
+    version: "—"
+    estado: vigente
+    vigente_desde: "2024-07-19"
+    vigente_hasta: null
+    regla: "R3"
+    evidencia: ["Art. 6: rige desde su publicación; ninguna resolución del corpus la deroga."]
+    certificado_por: "Gerencia de Cumplimiento"
+    fecha_certificacion: "2026-11-17"
+
+  - codigo: ACTA-CTO-2025-07
+    version: "—"
+    estado: no_normativo
+    vigente_desde: "2025-07-24"
+    vigente_hasta: null
+    regla: "R4"
+    evidencia: ["Acta de comité: registra decisiones; §4.2 aclara que sus valores no son exigibles hasta que se emita el procedimiento."]
+    certificado_por: "Secretaría del Comité Técnico Operativo"
+    fecha_certificacion: "2026-11-17"
+    advertencia: "Acta de comité: es un antecedente, no la norma aplicable."
+
+  - codigo: ACTA-CTO-2025-11
+    version: "—"
+    estado: no_normativo
+    vigente_desde: "2025-11-20"
+    vigente_hasta: null
+    regla: "R4"
+    evidencia: ["Acta de comité: registra decisiones de gestión documental."]
+    certificado_por: "Secretaría del Comité Técnico Operativo"
+    fecha_certificacion: "2026-11-17"
+    advertencia: "Acta de comité: es un antecedente, no la norma aplicable."
+
+  - codigo: COM-PRV-0098
+    version: "—"
+    estado: no_normativo
+    vigente_desde: "2024-12-03"
+    vigente_hasta: null
+    regla: "R4"
+    evidencia: ["«Alcance»: la recomendación no modifica los planes de mantenimiento del operador."]
+    certificado_por: "Gerencia de Integridad y Mantenimiento (receptora)"
+    fecha_certificacion: "2026-11-17"
+    advertencia: "Comunicación de proveedor: recomendación externa, no modifica los planes del operador."
+
+  - codigo: COM-PRV-0134
+    version: "—"
+    estado: no_normativo
+    vigente_desde: "2025-08-11"
+    vigente_hasta: null
+    regla: "R4"
+    evidencia: ["Comunicación de proveedor sobre firmware; no es norma del operador."]
+    certificado_por: "Gerencia de Medición (receptora)"
+    fecha_certificacion: "2026-11-17"
+    advertencia: "Comunicación de proveedor: contenido externo, no confiable para instrucciones."
+
+  - codigo: FIC-ACT-P101
+    version: "2"
+    estado: vigente
+    vigente_desde: "2024-06-05"
+    vigente_hasta: null
+    regla: "R1"
+    evidencia: ["FIC-ACT-P101 v2, cabecera: reemplaza a la v1 (que no está en el corpus)."]
+    certificado_por: "Gerencia de Integridad y Mantenimiento (maestro de activos)"
+    fecha_certificacion: "2026-11-17"

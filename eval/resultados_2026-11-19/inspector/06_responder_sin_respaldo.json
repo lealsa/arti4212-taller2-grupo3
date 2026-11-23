@@ -1,0 +1,24 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"pregunta\": \"¿Cuál es el precio del barril de crudo Brent hoy?\",\n  \"estado\": \"sin_respaldo\",\n  \"afirmaciones\": [],\n  \"advertencias\": [],\n  \"fragmentos_consultados\": [\n    \"PRO-MED-007 v2 §2\",\n    \"FIC-ACT-P101 v2 §2\",\n    \"COM-PRV-0098 §Recomendación\",\n    \"RES-CREG-0043-2024 §Art. 2\",\n    \"MAN-OPE-001 v3 §5\",\n    \"PRO-SEG-015 v1 §4\"\n  ],\n  \"traza_id\": \"004948152e24431a\"\n}"
+    }
+  ],
+  "structuredContent": {
+    "pregunta": "¿Cuál es el precio del barril de crudo Brent hoy?",
+    "estado": "sin_respaldo",
+    "afirmaciones": [],
+    "advertencias": [],
+    "fragmentos_consultados": [
+      "PRO-MED-007 v2 §2",
+      "FIC-ACT-P101 v2 §2",
+      "COM-PRV-0098 §Recomendación",
+      "RES-CREG-0043-2024 §Art. 2",
+      "MAN-OPE-001 v3 §5",
+      "PRO-SEG-015 v1 §4"
+    ],
+    "traza_id": "004948152e24431a"
+  },
+  "isError": false
+}

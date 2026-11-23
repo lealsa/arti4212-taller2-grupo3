@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Error executing tool obtener_fragmento: {\"error\": \"DOCUMENTO_DEROGADO\", \"mensaje\": \"PRO-OPE-012 v2 está derogado desde 2025-09-01 (R1). No se cita como norma.\", \"reemplazado_por\": \"PRO-OPE-012 v3\", \"certificado_por\": \"Centro de Control de Operaciones (área emisora)\", \"evidencia\": [\"PRO-OPE-012 v3, cabecera: reemplaza a PRO-OPE-012 v2; §3.1: los umbrales de la v3 reemplazan íntegramente los de la versión anterior.\", \"ACTA-CTO-2025-07 §4.2: los valores nuevos no eran exigibles hasta la emisión de la versión actualizada; la v2 rigió hasta el 2025-09-01.\"]}"
+    }
+  ],
+  "isError": true
+}

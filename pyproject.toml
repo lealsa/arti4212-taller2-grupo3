@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "petroandes-docs"
+version = "1.0.0"
+description = "Consulta documental gobernada para PetroAndes (Taller 2, ARTI 4212): ingesta con vigencia, recuperación híbrida filtrada, servidor MCP y arnés de evaluación"
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "Uso académico" }
+dependencies = [
+  "pdfplumber>=0.11",
+  "qdrant-client>=1.12",
+  "pyyaml>=6",
+  "snowballstemmer>=2.2",
+  "numpy>=1.26",
+  "pydantic>=2.6",
+  "mcp>=2.3",
+  # la prueba de envenenamiento genera un PDF temporal con la paráfrasis del ataque
+  "reportlab>=4",
+]
+
+[project.optional-dependencies]
+# Modelo de embeddings por defecto (multilingual-e5-small). Descarga desde Hugging Face la primera vez.
+st = ["sentence-transformers>=3.0"]
+# Modelo alterno sin Hugging Face: vectores de palabra de spaCy en español.
+spacy = ["spacy>=3.8,<3.9", "es_core_news_md @ https://github.com/explosion/spacy-models/releases/download/es_core_news_md-3.8.0/es_core_news_md-3.8.0-py3-none-any.whl"]
+# Evaluador de referencia del enunciado.
+laya = ["laya>=0.4.35"]
+dev = ["pytest>=8"]
+
+[project.scripts]
+petroandes-docs = "petroandes_docs.cli:main"
+petroandes-mcp = "petroandes_docs.servidor_mcp:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# sin .pytest_cache: el repositorio vive en una carpeta sincronizada con Google Drive
+addopts = "-p no:cacheprovider"
+filterwarnings = ["ignore::UserWarning", "ignore::DeprecationWarning"]

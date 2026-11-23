@@ -1,0 +1,24 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"pregunta\": \"¿Cuál es el umbral de alarma de presión del tramo Barrancabermeja – Coveñas?\",\n  \"estado\": \"sin_respaldo\",\n  \"afirmaciones\": [],\n  \"advertencias\": [],\n  \"fragmentos_consultados\": [\n    \"PRO-OPE-012 v3 §3\",\n    \"ACTA-CTO-2025-07 §3\",\n    \"MAN-OPE-001 v3 §3\",\n    \"MAN-OPE-001 v3 §1\",\n    \"ACTA-CTO-2025-07 §2\",\n    \"MAN-MTO-002 v1 §2\"\n  ],\n  \"traza_id\": \"7181942231354cd9\"\n}"
+    }
+  ],
+  "structuredContent": {
+    "pregunta": "¿Cuál es el umbral de alarma de presión del tramo Barrancabermeja – Coveñas?",
+    "estado": "sin_respaldo",
+    "afirmaciones": [],
+    "advertencias": [],
+    "fragmentos_consultados": [
+      "PRO-OPE-012 v3 §3",
+      "ACTA-CTO-2025-07 §3",
+      "MAN-OPE-001 v3 §3",
+      "MAN-OPE-001 v3 §1",
+      "ACTA-CTO-2025-07 §2",
+      "MAN-MTO-002 v1 §2"
+    ],
+    "traza_id": "7181942231354cd9"
+  },
+  "isError": false
+}

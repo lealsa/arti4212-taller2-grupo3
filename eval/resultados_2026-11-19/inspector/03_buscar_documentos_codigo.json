@@ -1,0 +1,66 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"consulta\": \"orden OT-2021-03117\",\n  \"modo\": \"hibrido\",\n  \"filtro_vigencia\": \"vigente | pendiente_certificacion | no_normativo\",\n  \"resultados\": [\n    {\n      \"cita\": \"FIC-ACT-P101 v2 §3\",\n      \"codigo\": \"FIC-ACT-P101\",\n      \"version\": \"2\",\n      \"seccion\": \"3\",\n      \"titulo_seccion\": \"3. Histórico de intervenciones mayores\",\n      \"titulo_documento\": \"Ficha técnica del activo — bomba principal P-101, estación Ayacucho\",\n      \"clase\": \"ficha_activo\",\n      \"naturaleza\": \"normativo\",\n      \"estado_vigencia\": \"vigente\",\n      \"advertencia_vigencia\": null,\n      \"cuarentena\": false,\n      \"texto\": \"Fecha: 2019-03-18; Intervención: Cambio de sellos mecánicos; Orden de trabajo: OT-2019-00842.\\nFecha: 2021-11-02; Intervención: Alineación y balanceo de rotor; Orden de trabajo: OT-2021-03117.\\nFecha: 2024-05-28; Intervención: Reemplazo de cojinetes de empuje; Orden de trabajo: OT-2024-01955.\",\n      \"puntaje\": 0.5909,\n      \"rango\": 1\n    },\n    {\n      \"cita\": \"PRO-HSE-003 v4 §5\",\n      \"codigo\": \"PRO-HSE-003\",\n      \"version\": \"4\",\n      \"seccion\": \"5\",\n      \"titulo_seccion\": \"5. Registros\",\n      \"titulo_documento\": \"Bloqueo y etiquetado de energías peligrosas\",\n      \"clase\": \"procedimiento\",\n      \"naturaleza\": \"normativo\",\n      \"estado_vigencia\": \"vigente\",\n      \"advertencia_vigencia\": null,\n      \"cuarentena\": false,\n      \"texto\": \"Permiso de trabajo, lista de verificación de bloqueo y registro de retiro.\",\n      \"puntaje\": 0.5,\n      \"rango\": 2\n    },\n    {\n      \"cita\": \"ACTA-CTO-2025-07 §2\",\n      \"codigo\": \"ACTA-CTO-2025-07\",\n      \"version\": \"—\",\n      \"seccion\": \"2\",\n      \"titulo_seccion\": \"2. Orden del día\",\n      \"titulo_documento\": \"Acta del Comité Técnico Operativo — sesión de julio de 2025\",\n      \"clase\": \"acta\",\n      \"naturaleza\": \"no_normativo\",\n      \"estado_vigencia\": \"no_normativo\",\n      \"advertencia_vigencia\": \"Acta de comité: es un antecedente, no la norma aplicable.\",\n      \"cuarentena\": false,\n      \"texto\": \"Revisión de los eventos de sustracción del primer semestre.\\nPropuesta de ajuste de los umbrales de alarma de presión.\\nVarios.\",\n      \"puntaje\": 0.3718,\n      \"rango\": 3\n    }\n  ],\n  \"huella_modelo\": \"spacy:es_core_news_md@3.8.0:300:idf-010c0c930053\",\n  \"traza_id\": \"397f07222132433f\"\n}"
+    }
+  ],
+  "structuredContent": {
+    "consulta": "orden OT-2021-03117",
+    "modo": "hibrido",
+    "filtro_vigencia": "vigente | pendiente_certificacion | no_normativo",
+    "resultados": [
+      {
+        "cita": "FIC-ACT-P101 v2 §3",
+        "codigo": "FIC-ACT-P101",
+        "version": "2",
+        "seccion": "3",
+        "titulo_seccion": "3. Histórico de intervenciones mayores",
+        "titulo_documento": "Ficha técnica del activo — bomba principal P-101, estación Ayacucho",
+        "clase": "ficha_activo",
+        "naturaleza": "normativo",
+        "estado_vigencia": "vigente",
+        "advertencia_vigencia": null,
+        "cuarentena": false,
+        "texto": "Fecha: 2019-03-18; Intervención: Cambio de sellos mecánicos; Orden de trabajo: OT-2019-00842.\nFecha: 2021-11-02; Intervención: Alineación y balanceo de rotor; Orden de trabajo: OT-2021-03117.\nFecha: 2024-05-28; Intervención: Reemplazo de cojinetes de empuje; Orden de trabajo: OT-2024-01955.",
+        "puntaje": 0.5909,
+        "rango": 1
+      },
+      {
+        "cita": "PRO-HSE-003 v4 §5",
+        "codigo": "PRO-HSE-003",
+        "version": "4",
+        "seccion": "5",
+        "titulo_seccion": "5. Registros",
+        "titulo_documento": "Bloqueo y etiquetado de energías peligrosas",
+        "clase": "procedimiento",
+        "naturaleza": "normativo",
+        "estado_vigencia": "vigente",
+        "advertencia_vigencia": null,
+        "cuarentena": false,
+        "texto": "Permiso de trabajo, lista de verificación de bloqueo y registro de retiro.",
+        "puntaje": 0.5,
+        "rango": 2
+      },
+      {
+        "cita": "ACTA-CTO-2025-07 §2",
+        "codigo": "ACTA-CTO-2025-07",
+        "version": "—",
+        "seccion": "2",
+        "titulo_seccion": "2. Orden del día",
+        "titulo_documento": "Acta del Comité Técnico Operativo — sesión de julio de 2025",
+        "clase": "acta",
+        "naturaleza": "no_normativo",
+        "estado_vigencia": "no_normativo",
+        "advertencia_vigencia": "Acta de comité: es un antecedente, no la norma aplicable.",
+        "cuarentena": false,
+        "texto": "Revisión de los eventos de sustracción del primer semestre.\nPropuesta de ajuste de los umbrales de alarma de presión.\nVarios.",
+        "puntaje": 0.3718,
+        "rango": 3
+      }
+    ],
+    "huella_modelo": "spacy:es_core_news_md@3.8.0:300:idf-010c0c930053",
+    "traza_id": "397f07222132433f"
+  },
+  "isError": false
+}

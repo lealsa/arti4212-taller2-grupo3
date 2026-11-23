@@ -1,0 +1,98 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"consulta\": \"orden OT-2021-03117\",\n  \"modo\": \"hibrido\",\n  \"filtro_vigencia\": \"vigente | pendiente_certificacion | no_normativo\",\n  \"resultados\": [\n    {\n      \"cita\": \"FIC-ACT-P101 v2 §3\",\n      \"codigo\": \"FIC-ACT-P101\",\n      \"version\": \"2\",\n      \"seccion\": \"3\",\n      \"titulo_seccion\": \"3. Histórico de intervenciones mayores\",\n      \"titulo_documento\": \"Ficha técnica del activo — bomba principal P-101, estación Ayacucho\",\n      \"clase\": \"ficha_activo\",\n      \"naturaleza\": \"normativo\",\n      \"estado_vigencia\": \"vigente\",\n      \"advertencia_vigencia\": null,\n      \"cuarentena\": false,\n      \"texto\": \"Fecha: 2019-03-18; Intervención: Cambio de sellos mecánicos; Orden de trabajo: OT-2019-00842.\\nFecha: 2021-11-02; Intervención: Alineación y balanceo de rotor; Orden de trabajo: OT-2021-03117.\\nFecha: 2024-05-28; Intervención: Reemplazo de cojinetes de empuje; Orden de trabajo: OT-2024-01955.\",\n      \"puntaje\": 1.0,\n      \"rango\": 1\n    },\n    {\n      \"cita\": \"ACTA-CTO-2025-11 §2\",\n      \"codigo\": \"ACTA-CTO-2025-11\",\n      \"version\": \"—\",\n      \"seccion\": \"2\",\n      \"titulo_seccion\": \"2. Orden del día\",\n      \"titulo_documento\": \"Acta del Comité Técnico Operativo — sesión de noviembre de 2025\",\n      \"clase\": \"acta\",\n      \"naturaleza\": \"no_normativo\",\n      \"estado_vigencia\": \"no_normativo\",\n      \"advertencia_vigencia\": \"Acta de comité: es un antecedente, no la norma aplicable.\",\n      \"cuarentena\": false,\n      \"texto\": \"Seguimiento a la implantación de los nuevos umbrales de presión.\\nResultados de la conciliación volumétrica del tercer trimestre.\\nGestión documental de procedimientos operativos.\",\n      \"puntaje\": 0.5,\n      \"rango\": 2\n    },\n    {\n      \"cita\": \"ACTA-CTO-2025-07 §2\",\n      \"codigo\": \"ACTA-CTO-2025-07\",\n      \"version\": \"—\",\n      \"seccion\": \"2\",\n      \"titulo_seccion\": \"2. Orden del día\",\n      \"titulo_documento\": \"Acta del Comité Técnico Operativo — sesión de julio de 2025\",\n      \"clase\": \"acta\",\n      \"naturaleza\": \"no_normativo\",\n      \"estado_vigencia\": \"no_normativo\",\n      \"advertencia_vigencia\": \"Acta de comité: es un antecedente, no la norma aplicable.\",\n      \"cuarentena\": false,\n      \"texto\": \"Revisión de los eventos de sustracción del primer semestre.\\nPropuesta de ajuste de los umbrales de alarma de presión.\\nVarios.\",\n      \"puntaje\": 0.4333,\n      \"rango\": 3\n    },\n    {\n      \"cita\": \"ACTA-CTO-2025-11 §3\",\n      \"codigo\": \"ACTA-CTO-2025-11\",\n      \"version\": \"—\",\n      \"seccion\": \"3\",\n      \"titulo_seccion\": \"3. Desarrollo\",\n      \"titulo_documento\": \"Acta del Comité Técnico Operativo — sesión de noviembre de 2025\",\n      \"clase\": \"acta\",\n      \"naturaleza\": \"no_normativo\",\n      \"estado_vigencia\": \"no_normativo\",\n      \"advertencia_vigencia\": \"Acta de comité: es un antecedente, no la norma aplicable.\",\n      \"cuarentena\": false,\n      \"texto\": \"3.1 La Jefatura del Centro de Control informa que la versión actualizada del procedimiento de atención de anomalías de presión fue emitida y se encuentra en aplicación.\\n3.2 La Gerencia de Medición presenta los resultados del tercer trimestre bajo la nueva tolerancia de conciliación y señala un incremento en el número de casos que superan el umbral de investigación.\\n3.3 Se discute la dificultad recurrente de establecer qué versión de un procedimiento se encuentra vigente. La Gerencia de Cumplimiento señala que el listado maestro de documentos no ha sido actualizado de manera consistente y que, en al menos un caso, un manual dejó de aplicarse por decisión del área sin que ello se reflejara en documento alguno.\",\n      \"puntaje\": 0.3333,\n      \"rango\": 4\n    },\n    {\n      \"cita\": \"RES-CREG-0043-2024 §Art. 6\",\n      \"codigo\": \"RES-CREG-0043-2024\",\n      \"version\": \"—\",\n      \"seccion\": \"Art. 6\",\n      \"titulo_seccion\": \"Artículo 6. Derogatorias y vigencia\",\n      \"titulo_documento\": \"Resolución 0043 de 2024 — Condiciones de medición para la transferencia de custodia\",\n      \"clase\": \"normativa\",\n      \"naturaleza\": \"normativo\",\n      \"estado_vigencia\": \"vigente\",\n      \"advertencia_vigencia\": null,\n      \"cuarentena\": false,\n      \"texto\": \"La presente resolución rige a partir de su publicación y deroga en su integridad la Resolución 0112 de 2021.\",\n      \"puntaje\": 0.3333,\n      \"rango\": 5\n    }\n  ],\n  \"huella_modelo\": \"st:intfloat/multilingual-e5-small@614241f622f53c4eeff9890bdc4f31cfecc418b3:384\",\n  \"traza_id\": \"db227aad039b4a51\"\n}"
+    }
+  ],
+  "structuredContent": {
+    "consulta": "orden OT-2021-03117",
+    "modo": "hibrido",
+    "filtro_vigencia": "vigente | pendiente_certificacion | no_normativo",
+    "resultados": [
+      {
+        "cita": "FIC-ACT-P101 v2 §3",
+        "codigo": "FIC-ACT-P101",
+        "version": "2",
+        "seccion": "3",
+        "titulo_seccion": "3. Histórico de intervenciones mayores",
+        "titulo_documento": "Ficha técnica del activo — bomba principal P-101, estación Ayacucho",
+        "clase": "ficha_activo",
+        "naturaleza": "normativo",
+        "estado_vigencia": "vigente",
+        "advertencia_vigencia": null,
+        "cuarentena": false,
+        "texto": "Fecha: 2019-03-18; Intervención: Cambio de sellos mecánicos; Orden de trabajo: OT-2019-00842.\nFecha: 2021-11-02; Intervención: Alineación y balanceo de rotor; Orden de trabajo: OT-2021-03117.\nFecha: 2024-05-28; Intervención: Reemplazo de cojinetes de empuje; Orden de trabajo: OT-2024-01955.",
+        "puntaje": 1,
+        "rango": 1
+      },
+      {
+        "cita": "ACTA-CTO-2025-11 §2",
+        "codigo": "ACTA-CTO-2025-11",
+        "version": "—",
+        "seccion": "2",
+        "titulo_seccion": "2. Orden del día",
+        "titulo_documento": "Acta del Comité Técnico Operativo — sesión de noviembre de 2025",
+        "clase": "acta",
+        "naturaleza": "no_normativo",
+        "estado_vigencia": "no_normativo",
+        "advertencia_vigencia": "Acta de comité: es un antecedente, no la norma aplicable.",
+        "cuarentena": false,
+        "texto": "Seguimiento a la implantación de los nuevos umbrales de presión.\nResultados de la conciliación volumétrica del tercer trimestre.\nGestión documental de procedimientos operativos.",
+        "puntaje": 0.5,
+        "rango": 2
+      },
+      {
+        "cita": "ACTA-CTO-2025-07 §2",
+        "codigo": "ACTA-CTO-2025-07",
+        "version": "—",
+        "seccion": "2",
+        "titulo_seccion": "2. Orden del día",
+        "titulo_documento": "Acta del Comité Técnico Operativo — sesión de julio de 2025",
+        "clase": "acta",
+        "naturaleza": "no_normativo",
+        "estado_vigencia": "no_normativo",
+        "advertencia_vigencia": "Acta de comité: es un antecedente, no la norma aplicable.",
+        "cuarentena": false,
+        "texto": "Revisión de los eventos de sustracción del primer semestre.\nPropuesta de ajuste de los umbrales de alarma de presión.\nVarios.",
+        "puntaje": 0.4333,
+        "rango": 3
+      },
+      {
+        "cita": "ACTA-CTO-2025-11 §3",
+        "codigo": "ACTA-CTO-2025-11",
+        "version": "—",
+        "seccion": "3",
+        "titulo_seccion": "3. Desarrollo",
+        "titulo_documento": "Acta del Comité Técnico Operativo — sesión de noviembre de 2025",
+        "clase": "acta",
+        "naturaleza": "no_normativo",
+        "estado_vigencia": "no_normativo",
+        "advertencia_vigencia": "Acta de comité: es un antecedente, no la norma aplicable.",
+        "cuarentena": false,
+        "texto": "3.1 La Jefatura del Centro de Control informa que la versión actualizada del procedimiento de atención de anomalías de presión fue emitida y se encuentra en aplicación.\n3.2 La Gerencia de Medición presenta los resultados del tercer trimestre bajo la nueva tolerancia de conciliación y señala un incremento en el número de casos que superan el umbral de investigación.\n3.3 Se discute la dificultad recurrente de establecer qué versión de un procedimiento se encuentra vigente. La Gerencia de Cumplimiento señala que el listado maestro de documentos no ha sido actualizado de manera consistente y que, en al menos un caso, un manual dejó de aplicarse por decisión del área sin que ello se reflejara en documento alguno.",
+        "puntaje": 0.3333,
+        "rango": 4
+      },
+      {
+        "cita": "RES-CREG-0043-2024 §Art. 6",
+        "codigo": "RES-CREG-0043-2024",
+        "version": "—",
+        "seccion": "Art. 6",
+        "titulo_seccion": "Artículo 6. Derogatorias y vigencia",
+        "titulo_documento": "Resolución 0043 de 2024 — Condiciones de medición para la transferencia de custodia",
+        "clase": "normativa",
+        "naturaleza": "normativo",
+        "estado_vigencia": "vigente",
+        "advertencia_vigencia": null,
+        "cuarentena": false,
+        "texto": "La presente resolución rige a partir de su publicación y deroga en su integridad la Resolución 0112 de 2021.",
+        "puntaje": 0.3333,
+        "rango": 5
+      }
+    ],
+    "huella_modelo": "st:intfloat/multilingual-e5-small@614241f622f53c4eeff9890bdc4f31cfecc418b3:384",
+    "traza_id": "db227aad039b4a51"
+  },
+  "isError": false
+}

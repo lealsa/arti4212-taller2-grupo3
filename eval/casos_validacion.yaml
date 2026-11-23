@@ -1,0 +1,171 @@
+# Conjunto de validación — Taller 2, Escenario A (ADR-008)
+#
+# Casos NUEVOS, escritos después de la primera evaluación y que no se usaron para ajustar nada:
+# ni umbrales, ni el prompt del intérprete, ni las guardas. Sirven para comparar las tres
+# estrategias de decisión sin el sesgo del conjunto de referencia (con el que se eligió el umbral 0,6).
+#
+# Sesgo declarado: se escribieron sabiendo que el sistema base falla ante paráfrasis, así que el
+# conjunto carga a propósito esa debilidad (paráfrasis, preguntas de «cuándo») y la contraparte que
+# importa en operación: preguntas fuera del corpus que se parecen a preguntas del corpus (un tramo
+# o un equipo que no existe). Mismo formato que casos_referencia.yaml.
+#
+# v1.1.0 (2026-11-19): se agregan V18–V23, trampas de valor, después de la ronda 1 de la comparación
+# y ANTES de la ronda 2. Motivo: en la ronda 1 la estrategia A2 mezcló valores de otra fila o de un
+# acta en tres casos de referencia (C01, C03, C20), y la versión 1.0.0 no tenía trampas de valor
+# para comprobar la corrección sin mirar los mismos casos que la motivaron.
+#
+# tipo: directo | parafrasis | hibrida_codigo | cuando | trampa_valor | no_respondible
+
+version_conjunto: "v1.1.0"
+
+casos:
+  - id: V01
+    tipo: parafrasis
+    pregunta: "¿Cada cuánto le echan grasa a los sellos de las válvulas de la línea?"
+    hechos: ["Semestral"]
+    prohibidos: ["cuatro meses"]
+    fuentes: [{codigo: MAN-MTO-002, version: "1", seccion: "3"}]
+
+  - id: V02
+    tipo: parafrasis
+    pregunta: "¿Cuánto tiempo hay para dejar anotado en el sistema el trabajo que se le hizo a una válvula?"
+    hechos: ["veinticuatro horas"]
+    prohibidos: []
+    fuentes: [{codigo: MAN-MTO-002, version: "1", seccion: "5"}]
+
+  - id: V03
+    tipo: parafrasis
+    pregunta: "Si alguien quiere quitar un candado que no puso él, ¿qué necesita?"
+    hechos: ["autorización escrita del responsable de la instalación"]
+    prohibidos: []
+    fuentes: [{codigo: PRO-HSE-003, version: "4", seccion: "4"}]
+
+  - id: V04
+    tipo: parafrasis
+    pregunta: "¿Qué tan rápido hay que avisarle a la Gerencia de Seguridad Física cuando se detecta un robo de crudo?"
+    hechos: ["2 horas"]
+    prohibidos: []
+    fuentes: [{codigo: PRO-SEG-015, version: "1", seccion: "3"}]
+
+  - id: V05
+    tipo: parafrasis
+    pregunta: "¿Cuántos días hay para reportar que un sistema de medición de custodia se pasó del límite de incertidumbre?"
+    hechos: ["cinco días hábiles"]
+    prohibidos: []
+    fuentes: [{codigo: RES-CREG-0043-2024, version: "—", seccion: "Art. 5"}]
+
+  - id: V06
+    tipo: parafrasis
+    pregunta: "En un arranque después de mucho tiempo parada, ¿cuánto tiene que quedarse estable la presión de succión antes de seguir?"
+    hechos: ["10 minutos"]
+    prohibidos: []
+    fuentes: [{codigo: PRO-OPE-021, version: "1", seccion: "3"}]
+
+  - id: V07
+    tipo: parafrasis
+    pregunta: "Si el balance de un tramo se sale de la tolerancia, ¿en cuánto tiempo hay que investigarlo?"
+    hechos: ["tres días hábiles"]
+    prohibidos: []
+    fuentes: [{codigo: PRO-MED-007, version: "2", seccion: "3"}]
+
+  - id: V08
+    tipo: parafrasis
+    pregunta: "¿Quién tiene que autorizar que un tramo trabaje un tiempo largo muy cerca de su presión máxima de diseño?"
+    hechos: ["Gerencia de Integridad"]
+    prohibidos: []
+    fuentes: [{codigo: MAN-OPE-001, version: "3", seccion: "3"}]
+
+  - id: V09
+    tipo: directo
+    pregunta: "¿Qué tipo de medidor hay en la salida a buque de Coveñas?"
+    hechos: ["Desplazamiento positivo"]
+    prohibidos: []
+    fuentes: [{codigo: MAN-OPE-004, version: "2", seccion: "3"}]
+
+  - id: V10
+    tipo: hibrida_codigo
+    pregunta: "¿En qué año se instaló la bomba P-101?"
+    hechos: ["2012"]
+    prohibidos: []
+    fuentes: [{codigo: FIC-ACT-P101, version: "2", seccion: "1"}]
+
+  - id: V11
+    tipo: cuando
+    pregunta: "¿Cuándo hay que entregarle a la autoridad los soportes de medición de los reportes de pérdidas?"
+    hechos: ["cuando les sean requeridos"]
+    prohibidos: []
+    fuentes: [{codigo: RES-ANH-0471-2023, version: "—", seccion: "Art. 4"}]
+
+  - id: V12
+    tipo: cuando
+    pregunta: "¿Cuándo se le informa al comité directivo de un evento de hurto?"
+    hechos: ["Siguiente sesión ordinaria"]
+    prohibidos: []
+    fuentes: [{codigo: PRO-SEG-015, version: "1", seccion: "3"}]
+
+  - id: V13
+    tipo: no_respondible
+    pregunta: "¿Cuál es el umbral de alarma de presión del tramo Barrancabermeja – Coveñas?"
+    debe_rechazar: true
+
+  - id: V14
+    tipo: no_respondible
+    pregunta: "¿En qué año se instaló la bomba P-205?"
+    debe_rechazar: true
+
+  - id: V15
+    tipo: no_respondible
+    pregunta: "¿Cuál es la MAOP del gasoducto Ballena – Barrancabermeja?"
+    debe_rechazar: true
+
+  - id: V16
+    tipo: no_respondible
+    pregunta: "¿Cada cuánto se calibran los cromatógrafos de gas?"
+    debe_rechazar: true
+
+  - id: V17
+    tipo: no_respondible
+    pregunta: "¿Quién es el gerente general de PetroAndes?"
+    debe_rechazar: true
+
+  - id: V18
+    tipo: trampa_valor
+    pregunta: "¿Cuál es la MAOP del tramo Caucasia – Coveñas?"
+    hechos: ["1.050"]
+    prohibidos: ["920"]
+    fuentes: [{codigo: MAN-OPE-001, version: "3", seccion: "3"}]
+
+  - id: V19
+    tipo: trampa_valor
+    pregunta: "¿A partir de qué presión se genera la alarma en el tramo Caucasia – Coveñas?"
+    hechos: ["920"]
+    prohibidos: ["1.050"]
+    fuentes: [{codigo: PRO-OPE-012, version: "3", seccion: "3"}]
+
+  - id: V20
+    tipo: trampa_valor
+    pregunta: "¿Cuál es el umbral de alarma de presión del tramo Barrancabermeja – Ayacucho?"
+    hechos: ["1.020"]
+    prohibidos: ["1.180"]
+    fuentes: [{codigo: PRO-OPE-012, version: "3", seccion: "3"}]
+
+  - id: V21
+    tipo: trampa_valor
+    pregunta: "¿Qué tolerancia se usa hoy para aceptar la diferencia de conciliación de un tramo?"
+    hechos: ["0,5 %"]
+    prohibidos: ["0,8 %"]
+    fuentes: [{codigo: PRO-MED-007, version: "2", seccion: "3"}]
+
+  - id: V22
+    tipo: trampa_valor
+    pregunta: "¿En cuánto tiempo se le avisa a la Jefatura de Operaciones de un evento de hurto?"
+    hechos: ["2 horas"]
+    prohibidos: ["12 horas"]
+    fuentes: [{codigo: PRO-SEG-015, version: "1", seccion: "3"}]
+
+  - id: V23
+    tipo: trampa_valor
+    pregunta: "¿Cuál es el límite de alarma de la temperatura de cojinetes de la bomba P-101?"
+    hechos: ["82 °C"]
+    prohibidos: ["7,1"]
+    fuentes: [{codigo: FIC-ACT-P101, version: "2", seccion: "2"}]

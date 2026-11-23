@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Error executing tool obtener_fragmento: {\"error\": \"FRAGMENTO_EN_CUARENTENA\", \"mensaje\": \"[CONTENIDO EN CUARENTENA] Este apartado contiene texto dirigido a sistemas automáticos (posible inyección de instrucciones). No se entrega a consumidores automáticos. Un auditor humano puede revisarlo con `petroandes-docs auditar-fragmento`.\", \"motivo\": \"dirigido_a_sistema, exfiltracion, ignorar_instrucciones, ocultar_al_usuario\"}"
+    }
+  ],
+  "isError": true
+}

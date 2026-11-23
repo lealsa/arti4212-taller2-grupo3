@@ -1,0 +1,24 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"pregunta\": \"¿Cuál es el precio del barril de crudo Brent hoy?\",\n  \"estado\": \"sin_respaldo\",\n  \"afirmaciones\": [],\n  \"advertencias\": [],\n  \"fragmentos_consultados\": [\n    \"RES-ANH-0471-2023 §Art. 5\",\n    \"RES-ANH-0471-2023 §Art. 2\",\n    \"FIC-ACT-P101 v2 §2\",\n    \"RES-ANH-0471-2023 §Art. 4\",\n    \"RES-ANH-0471-2023 §Considerando\",\n    \"RES-ANH-0471-2023 §Art. 1\"\n  ],\n  \"traza_id\": \"1cbc4277bc164171\"\n}"
+    }
+  ],
+  "structuredContent": {
+    "pregunta": "¿Cuál es el precio del barril de crudo Brent hoy?",
+    "estado": "sin_respaldo",
+    "afirmaciones": [],
+    "advertencias": [],
+    "fragmentos_consultados": [
+      "RES-ANH-0471-2023 §Art. 5",
+      "RES-ANH-0471-2023 §Art. 2",
+      "FIC-ACT-P101 v2 §2",
+      "RES-ANH-0471-2023 §Art. 4",
+      "RES-ANH-0471-2023 §Considerando",
+      "RES-ANH-0471-2023 §Art. 1"
+    ],
+    "traza_id": "1cbc4277bc164171"
+  },
+  "isError": false
+}

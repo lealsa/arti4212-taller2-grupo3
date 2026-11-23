@@ -1,0 +1,40 @@
+---
+title: Grafo de orquestación del copiloto de conciliación (estados y transiciones)
+---
+stateDiagram-v2
+    direction LR
+    classDef det fill:#DCE9F7,stroke:#2F6DB5,color:#1E1E1E
+    classDef ag fill:#FCE6D2,stroke:#C8641E,color:#1E1E1E
+    classDef hum fill:#DFF0DD,stroke:#3C8A3A,color:#1E1E1E
+    classDef fin fill:#FFFFFF,stroke:#333333,color:#1E1E1E
+
+    [*] --> recibir_corte: evento corte.publicado (DMZ)
+    recibir_corte --> calcular_diferencia
+    calcular_diferencia --> clasificar
+    calcular_diferencia --> incidente: balance no disponible tras 3 reintentos
+    clasificar --> archivar: |d| ≤ 0,5 %
+    clasificar --> correlacionar_presion: |d| > 0,5 %
+    archivar --> [*]
+    correlacionar_presion --> trasladar_hurto: sospecha de sustracción (PRO-OPE-012 §3.2)
+    trasladar_hurto --> [*]
+    correlacionar_presion --> notificar_seguridad: |d| > 1 %
+    correlacionar_presion --> investigar: 0,5 % < |d| ≤ 1 %
+    notificar_seguridad --> investigar
+    investigar --> investigar: herramienta de lectura (≤ 12 pasos)
+    investigar --> redactar_borrador: evidencia suficiente
+    investigar --> revision_manual: presupuesto agotado
+    redactar_borrador --> validar_borrador
+    validar_borrador --> redactar_borrador: cifra o cita inválida (≤ 2 veces)
+    validar_borrador --> revision_manual: tercera validación fallida
+    validar_borrador --> aprobacion_humana: válido
+    aprobacion_humana --> registrar_acta: aprobar
+    aprobacion_humana --> investigar: devolver con observaciones (≤ 2 veces)
+    aprobacion_humana --> revision_manual: rechazar o 3 días hábiles vencidos
+    revision_manual --> registrar_acta: acta manual firmada
+    registrar_acta --> notificar_cumplimiento
+    notificar_cumplimiento --> [*]
+    incidente --> [*]
+
+    class recibir_corte,calcular_diferencia,clasificar,archivar,correlacionar_presion,notificar_seguridad,validar_borrador,registrar_acta,notificar_cumplimiento,incidente det
+    class investigar,redactar_borrador ag
+    class aprobacion_humana,revision_manual,trasladar_hurto hum

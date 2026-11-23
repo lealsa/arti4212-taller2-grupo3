@@ -1,0 +1,22 @@
+{
+  "resources": [
+    {
+      "name": "contrato_corpus",
+      "uri": "petroandes://corpus/contrato",
+      "description": "Contrato del corpus: partición, metadatos, regla de vigencia y certificador por clase",
+      "mimeType": "application/yaml"
+    },
+    {
+      "name": "registro_vigencia",
+      "uri": "petroandes://corpus/registro-vigencia",
+      "description": "Registro de vigencia documental certificado (fuente de autoridad del índice)",
+      "mimeType": "application/yaml"
+    },
+    {
+      "name": "catalogo_documentos",
+      "uri": "petroandes://corpus/documentos",
+      "description": "Documentos indexados con su estado de vigencia y número de fragmentos",
+      "mimeType": "application/json"
+    }
+  ]
+}
