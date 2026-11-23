@@ -74,7 +74,7 @@ Los `.bat` de la raíz hacen lo mismo y dejan un registro de texto junto al `.ba
 | Archivo | Qué hace | Registro |
 |---|---|---|
 | `correr_windows.bat` | Crea el entorno, instala, ingesta, evalúa con laya y corre la prueba de envenenamiento | `windows_log.txt` |
-| `correr_pruebas_windows.bat` | Corre las 50 pruebas | `pruebas_log.txt` |
+| `correr_pruebas_windows.bat` | Corre las 51 pruebas | `pruebas_log.txt` |
 | `correr_comparacion_windows.bat` | Comparación de ADR-008 (unos 13 minutos en CPU) | `windows_log_comparacion.txt` |
 | `capturar_inspector_windows.bat` | Captura la verificación con el MCP Inspector | `inspector_log.txt` |
 | `actualizar_evidencias_windows.bat` | Respalda `eval/resultados/`, reingesta, evalúa, corre la prueba de envenenamiento y captura el Inspector | `evidencias_log.txt` |
@@ -93,7 +93,7 @@ export PETROANDES_DECISOR=crossencoder:BAAI/bge-reranker-v2-m3@953dc6f6f85a1b2db
 
 laya no admite fijar revisión y se carga desde `main`; si su checkpoint cambia, el anclaje y la pertinencia pueden variar algo, no la tasa de desviación, que se calcula sin juez.
 
-Con esos commits deben salir 30 de 30 en referencia, 18 de 23 en validación, 0 derogados recuperados y 50 pruebas aprobadas. `eval/resultados/reporte.md` registra la huella del índice con la que se obtuvieron. La latencia depende de la CPU.
+Con esos commits deben salir 30 de 30 en referencia, 18 de 23 en validación, 0 derogados recuperados y 51 pruebas aprobadas. `eval/resultados/reporte.md` registra la huella del índice con la que se obtuvieron. La latencia depende de la CPU.
 
 ### Modo liviano, sin Hugging Face
 
@@ -135,7 +135,7 @@ petroandes-docs evaluar --juez laya         # o --juez lexico si no hay checkpoi
 petroandes-docs comparar --juez laya        # ADR-008: compara A0, A0G, A1, A2r1, A2md, A2 y A3 en referencia y validación
 petroandes-docs prueba-envenenamiento
 petroandes-docs auditar-fragmento COM-PRV-0134 — Anexo   # revisión humana de un fragmento en cuarentena
-python -m pytest -q                         # 50 pruebas
+python -m pytest -q                         # 51 pruebas
 ```
 
 `make demo` corre las cuatro escenas de la demostración en vivo.

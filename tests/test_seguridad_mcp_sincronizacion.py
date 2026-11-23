@@ -109,3 +109,25 @@ def test_contrato_declara_patron_de_version_y_longitud_de_seccion(indice):
     assert props["seccion"]["maxLength"] == 60
     vig = tools["consultar_vigencia"].input_schema["properties"]["version"]
     assert any(o.get("pattern") == r"^(\d+|—)$" for o in vig["anyOf"])
+
+
+def test_llamadas_en_paralelo_abren_un_solo_indice(cfg_aislado, monkeypatch):
+    import threading
+    from petroandes_docs import servidor_mcp as s
+    from petroandes_docs.indice import Indice
+    Indice.construir(cfg_aislado, log=lambda *_: None).cliente.close()
+    monkeypatch.setattr(s, "cargar", lambda: cfg_aislado)
+    monkeypatch.setattr(s, "_INDICE", [])
+    errores, abiertos = [], []
+
+    def abrir():
+        try:
+            abiertos.append(s._indice())
+        except Exception as e:  # pragma: no cover - es lo que la prueba descarta
+            errores.append(e)
+
+    hilos = [threading.Thread(target=abrir) for _ in range(4)]
+    [h.start() for h in hilos]
+    [h.join() for h in hilos]
+    assert not errores
+    assert len({id(i) for i in abiertos}) == 1

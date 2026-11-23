@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import json
 import sys
-from functools import lru_cache
+import threading
 from typing import Annotated, Literal, Optional
 
 import mcp_types as t
@@ -92,9 +92,16 @@ class VigenciaSalida(BaseModel):
     modo_certificacion: str
 
 
-@lru_cache(maxsize=1)
+_CANDADO = threading.RLock()
+_INDICE: list[Indice] = []
+
+
 def _indice() -> Indice:
-    return Indice.abrir(cargar())
+    # Un host puede llamar varias herramientas en paralelo; Qdrant embebido admite un solo cliente por carpeta.
+    with _CANDADO:
+        if not _INDICE:
+            _INDICE.append(Indice.abrir(cargar()))
+        return _INDICE[0]
 
 
 def _salida(p: dict, puntaje=None, rango=None) -> FragmentoSalida:
@@ -128,10 +135,11 @@ def crear_servidor(indice_factory=_indice, estrategia_factory=None) -> MCPServer
     _estrategia: dict = {}
 
     def estrategia(ix):
-        if "e" not in _estrategia:          # se carga una vez, en la primera consulta
-            from .estrategias import por_defecto
-            _estrategia["e"] = (estrategia_factory(), None) if estrategia_factory else por_defecto(ix)
-        return _estrategia["e"]
+        with _CANDADO:
+            if "e" not in _estrategia:
+                from .estrategias import por_defecto
+                _estrategia["e"] = (estrategia_factory(), None) if estrategia_factory else por_defecto(ix)
+            return _estrategia["e"]
 
     @srv.tool(name="buscar_documentos", title="Buscar en el corpus documental vigente", annotations=LECTURA,
               description=(
